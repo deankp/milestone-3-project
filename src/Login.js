@@ -1,6 +1,18 @@
 import React from "react";
 import "./Login.css";
+import password_hide from "./Images/password-hide.png";
+import password_show from "./Images/password-show.png";
+import { useState, useEffect, useRef } from "react";
+
 const Login = () => {
+  const [passwordView, setPasswordView] = useState(false);
+
+  const changeView = () => {
+    setPasswordView(!passwordView);
+  };
+
+  useEffect(() => {}, [passwordView]);
+
   return (
     <body>
       <div className="wrapper login">
@@ -33,7 +45,17 @@ const Login = () => {
                   <label>
                     Password<span>*</span>
                   </label>
-                  <input type="password" placeholder="Password" required />
+                  <div id="password">
+                    <input
+                      type={passwordView ? "text" : "password"}
+                      placeholder="Password"
+                      required
+                    />
+                    <img
+                      onClick={changeView}
+                      src={passwordView ? password_hide : password_show}
+                    />
+                  </div>
                 </p>
                 <p>
                   <input type="submit" value="Sign In" />
