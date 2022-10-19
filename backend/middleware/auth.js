@@ -9,10 +9,10 @@ const auth = (req, res, next) => {
       if (err) return res.status(400).json({ msg: "Authorization not valid." });
 
       req.user = user;
-      next()
+      next();
     });
   } catch (err) {
-    return;
+    return res.status(500).json({ msg: err.message });
   }
 };
 
