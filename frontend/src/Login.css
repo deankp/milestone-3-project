@@ -208,6 +208,15 @@ input[type=password]:focus::placeholder{
     display: flex;
     align-items: center;
 }
-img{
+#password img{
     width: 10%;
+}
+
+.title{
+    font-family: poppins;
+    color: #097392
+}
+
+.title span{
+    color: #D55534
 }
