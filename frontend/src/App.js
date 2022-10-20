@@ -1,12 +1,11 @@
 import Login from "./Login";
+import SignUp from "./SignUp";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Here's Our Last Project!</p>
-        <Login />
-      </header>
+      <Login />
+      <SignUp />
     </div>
   );
 }
