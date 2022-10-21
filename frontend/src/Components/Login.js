@@ -25,7 +25,7 @@ const Login = () => {
         email: user.email,
         password: user.password,
       });
-      setUser({ name: "", email: "", password: "" });
+      setUser({ name: "adf", email: "fads", password: "fas" });
       setErr(res.data.msg);
     } catch (err) {
       err.response.data.msg && setErr(err.response.data.msg);
@@ -62,7 +62,7 @@ const Login = () => {
           <div className="col-right">
             <div className="login-form">
               <h2>Login</h2>
-              <form>
+              <form onSubmit={registerSubmit}>
                 <p>
                   <label>
                     Username/Email address<span>*</span>

@@ -184,23 +184,23 @@ body{
     box-shadow: inset 250px 0 0 0 #83B4B3;
 }
 
-input[type=text], input[type=password]{
+.login input[type=text], input[type=password]{
     background-color: #ffffff;
     transition: .7s;
 }
 
-input[type=text]:focus{
+.login input[type=text]:focus{
     background-color: #83B4B3;
     color: #ffffff;
 }
-input[type=text]:focus::placeholder{
+.login input[type=text]:focus::placeholder{
     color: #ffffff;
 }
-input[type=password]:focus{
+.login input[type=password]:focus{
     background-color: #83B4B3;
     color: #ffffff;
 }
-input[type=password]:focus::placeholder{
+.login input[type=password]:focus::placeholder{
     color: #ffffff;
 }
 

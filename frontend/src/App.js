@@ -4,6 +4,7 @@ import axios from "axios";
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
 import Notes from "./Components/Notes";
+import Home from "./Components/Home";
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -13,6 +14,7 @@ function App() {
       {isLogin ? <Notes /> : <Login />}
       {/* <Login /> */}
       <SignUp />
+      <Home />
     </div>
   );
 }
