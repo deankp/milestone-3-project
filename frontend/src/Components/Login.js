@@ -71,6 +71,7 @@ const Login = () => {
                     type="text"
                     placeholder="Username or Email"
                     required
+                    defaultValue={user.email}
                     onChange={onChangeInput}
                   />
                 </p>
@@ -83,6 +84,7 @@ const Login = () => {
                       type={passwordView ? "text" : "password"}
                       placeholder="Password"
                       required
+                      defaultValue={user.password}
                       onChange={onChangeInput}
                     />
                     <img
