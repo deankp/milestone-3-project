@@ -67,7 +67,12 @@ const Login = () => {
                   <label>
                     Username/Email address<span>*</span>
                   </label>
-                  <input type="text" placeholder="Username or Email" required />
+                  <input
+                    type="text"
+                    placeholder="Username or Email"
+                    required
+                    onChange={onChangeInput}
+                  />
                 </p>
                 <p>
                   <label>
@@ -78,6 +83,7 @@ const Login = () => {
                       type={passwordView ? "text" : "password"}
                       placeholder="Password"
                       required
+                      onChange={onChangeInput}
                     />
                     <img
                       onClick={changeView}

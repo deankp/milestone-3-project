@@ -46,7 +46,7 @@ function SignUp() {
         <div className="SignUpContainer">
           <div className="SignUp-form">
             <h1>Sign Up!</h1>
-            <form autoComplete="off">
+            <form onSubmit={registerSubmit}>
               <div className="input">
                 <p>
                   <label>
@@ -59,6 +59,7 @@ function SignUp() {
                     placeholder="Username"
                     autoComplete="off"
                     required
+                    onChange={onChangeInput}
                   />
                 </div>
               </div>
@@ -72,6 +73,7 @@ function SignUp() {
                     type="email"
                     placeholder="Email Adress"
                     autoComplete="off"
+                    onChange={onChangeInput}
                   />
                 </div>
               </div>
@@ -87,6 +89,7 @@ function SignUp() {
                     placeholder="Password"
                     required
                     autoComplete="off"
+                    onChange={onChangeInput}
                   />
                   <img
                     onClick={changeView}
@@ -106,6 +109,7 @@ function SignUp() {
                     placeholder="Password"
                     autoComplete="off"
                     required
+                    onChange={onChangeInput}
                   />
                   <img
                     onClick={changeConfirmView}

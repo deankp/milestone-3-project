@@ -21,17 +21,6 @@ app.listen(PORT, () => {
 });
 
 // Connect to MongoDB
-const URI = process.env.MONGO_URL;
-
-mongoose.connect(
-  URI,
-  {
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
-  () => {
-    console.log("Connected to MongoDB");
-  }
-);
+mongoose.connect(process.env.MONGO_URL, () => {
+  console.log("Connected to MongoDB");
+});
