@@ -25,7 +25,7 @@ const Login = () => {
         email: user.email,
         password: user.password,
       });
-      setUser({ name: "adf", email: "fads", password: "fas" });
+      setUser({ name: "", email: "", password: "" });
       setErr(res.data.msg);
     } catch (err) {
       err.response.data.msg && setErr(err.response.data.msg);
