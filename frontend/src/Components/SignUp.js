@@ -1,11 +1,35 @@
-import "./SignUp.css";
-import password_hide from "./Images/password-hide.png";
-import password_show from "./Images/password-show.png";
+import "../CSS/SignUp.css";
+import password_hide from "../Images/password-hide.png";
+import password_show from "../Images/password-show.png";
 import { useState, useEffect, useRef } from "react";
+import axios from "axios";
 
 function SignUp() {
   const [passwordView, setPasswordView] = useState(false);
   const [confirmPasswordView, setConfirmPasswordView] = useState(false);
+  const [user, setUser] = useState({ name: "", email: "", password: "" });
+  const [err, setErr] = useState("");
+
+  const onChangeInput = (e) => {
+    const { name, value } = e.target;
+    setUser({ ...user, [name]: value });
+    setErr("");
+  };
+
+  const registerSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("/user/register", {
+        username: user.name,
+        email: user.email,
+        password: user.password,
+      });
+      setUser({ name: "", email: "", password: "" });
+      setErr(res.data.msg);
+    } catch (err) {
+      err.response.data.msg && setErr(err.response.data.msg);
+    }
+  };
 
   const changeView = () => {
     setPasswordView(!passwordView);
