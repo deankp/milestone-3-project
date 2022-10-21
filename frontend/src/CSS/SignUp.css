@@ -121,33 +121,33 @@ body{
     width: 75%
 }
 
-input[type=text], input[type=password], input[type=email], input[type=date]{
+.SignUp input[type=text], input[type=password], input[type=email], input[type=date]{
     background-color: #ffffff;
     transition: .7s;
 }
 
-input[type=text]:focus{
+.SignUp input[type=text]:focus{
     background-color: #98c2c1;
     color: #ffffff;
 }
-input[type=text]:focus::placeholder{
+.SignUp input[type=text]:focus::placeholder{
     color: #ffffff;
 }
-input[type=password]:focus{
+.SignUp input[type=password]:focus{
     background-color: #98c2c1;
     color: #ffffff;
 }
-input[type=password]:focus::placeholder{
+.SignUp input[type=password]:focus::placeholder{
     color: #ffffff;
 }
-input[type=email]:focus{
+.SignUp input[type=email]:focus{
     background-color: #98c2c1;
     color: #ffffff;
 }
-input[type=email]:focus::placeholder{
+.SignUp input[type=email]:focus::placeholder{
     color: #ffffff;
 }
-input[type=date]:focus{
+.SignUp input[type=date]:focus{
     background-color: #98c2c1;
     color: #ffffff;
 }
@@ -164,7 +164,7 @@ input[type=date]:focus{
     margin: 10px 0 10px 0;
 }
 
-h1{
+.SignUp h1{
     margin: 15px 0 15px 0;
     font-size: 30px;
     font-weight: 700;
