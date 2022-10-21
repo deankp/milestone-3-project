@@ -59,6 +59,7 @@ function SignUp() {
                     placeholder="Username"
                     autoComplete="off"
                     required
+                    defaultValue={user.name}
                     onChange={onChangeInput}
                   />
                 </div>
@@ -73,6 +74,7 @@ function SignUp() {
                     type="email"
                     placeholder="Email Adress"
                     autoComplete="off"
+                    defaultValue={user.email}
                     onChange={onChangeInput}
                   />
                 </div>
@@ -88,6 +90,7 @@ function SignUp() {
                     type={passwordView ? "text" : "password"}
                     placeholder="Password"
                     required
+                    defaultValue={user.password}
                     autoComplete="off"
                     onChange={onChangeInput}
                   />
@@ -109,6 +112,7 @@ function SignUp() {
                     placeholder="Password"
                     autoComplete="off"
                     required
+                    defaultValue={user.password}
                     onChange={onChangeInput}
                   />
                   <img
