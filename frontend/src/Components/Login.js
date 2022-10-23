@@ -2,7 +2,7 @@ import "../CSS/Login.css";
 import password_hide from "../Images/password-hide.png";
 import password_show from "../Images/password-show.png";
 import { useState, useEffect } from "react";
-import axios from "../api/axios";
+import axios from "../api/Axios";
 
 const Login = ({ setIsLogin }) => {
   const [passwordView, setPasswordView] = useState(false);

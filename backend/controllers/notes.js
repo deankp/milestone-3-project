@@ -59,4 +59,4 @@ const notes = {
   },
 };
 
-module.exports = noteCtrl;
+module.exports = notes;

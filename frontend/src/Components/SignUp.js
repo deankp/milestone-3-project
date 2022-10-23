@@ -2,7 +2,7 @@ import "../CSS/SignUp.css";
 import password_hide from "../Images/password-hide.png";
 import password_show from "../Images/password-show.png";
 import { useState, useEffect } from "react";
-import axios from "../api/axios";
+import axios from "../api/Axios";
 
 function SignUp() {
   const [passwordView, setPasswordView] = useState(false);
@@ -19,7 +19,7 @@ function SignUp() {
   const registerSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/user/register", {
+      const res = await axios.post("http://localhost:3001/user/register", {
         username: user.name,
         email: user.email,
         password: user.password,
