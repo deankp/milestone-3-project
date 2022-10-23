@@ -1,9 +1,9 @@
 import axios from "axios";
 
-function Axios() {
+function Base() {
   axios.create({
     baseURL: "http://localhost:3001",
   });
 }
 
-export default Axios;
+export default Base;

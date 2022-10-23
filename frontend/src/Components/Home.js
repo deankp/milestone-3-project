@@ -1,6 +1,10 @@
 import "../CSS/Home.css";
 import upArrow from "../Images/up-arrow.png";
+import React from "react"
+import Logout from "./Logout"
+
 function Home() {
+  
   return (
     <div className="homeWrapper">
       <div className="homeContainer home">
@@ -16,6 +20,7 @@ function Home() {
             Soft<span>Notes</span>
           </h1>
           <p>Sort</p>
+          <Logout/>
         </nav>
         <div className="searchBar">
           <input type="text" placeholder="search..." />

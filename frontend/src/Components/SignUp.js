@@ -2,12 +2,13 @@ import "../CSS/SignUp.css";
 import password_hide from "../Images/password-hide.png";
 import password_show from "../Images/password-show.png";
 import { useState, useEffect } from "react";
-import axios from "../api/Axios";
+import Base from "../api/Axios";
+import axios from "axios"
 
-function SignUp() {
+function SignUp(props) {
   const [passwordView, setPasswordView] = useState(false);
   const [confirmPasswordView, setConfirmPasswordView] = useState(false);
-  const [user, setUser] = useState({ name: "", email: "", password: "" });
+  const [user, setUser] = useState({ username: "", email: "", password: "" });
   const [err, setErr] = useState("");
 
   const onChangeInput = (e) => {
@@ -20,14 +21,17 @@ function SignUp() {
     e.preventDefault();
     try {
       const res = await axios.post("http://localhost:3001/user/register", {
-        username: user.name,
+        username: user.username,
         email: user.email,
         password: user.password,
       });
       setUser({ name: "", email: "", password: "" });
-      setErr(res.data.msg);
+      setErr(res.data);
+      props.setIsLogin(true);
+      window.location.href = "/home"
     } catch (err) {
-      err.response.data.msg && setErr(err.response.data.msg);
+      //err.response.data && setErr(err.response.data);
+      console.log(err)
     }
   };
 
@@ -41,7 +45,7 @@ function SignUp() {
   useEffect(() => {}, [passwordView]);
 
   return (
-    <body>
+    <div>
       <div className="SignUpWrapper SignUp">
         <div className="SignUpContainer">
           <div className="SignUp-form">
@@ -59,7 +63,8 @@ function SignUp() {
                     placeholder="Username"
                     autoComplete="off"
                     required
-                    defaultValue={user.name}
+                    defaultValue={user.username}
+                    name="username"
                     onChange={onChangeInput}
                   />
                 </div>
@@ -75,6 +80,7 @@ function SignUp() {
                     placeholder="Email Adress"
                     autoComplete="off"
                     defaultValue={user.email}
+                    name="email"
                     onChange={onChangeInput}
                   />
                 </div>
@@ -91,6 +97,7 @@ function SignUp() {
                     placeholder="Password"
                     required
                     defaultValue={user.password}
+                    name="password"
                     autoComplete="off"
                     onChange={onChangeInput}
                   />
@@ -141,7 +148,7 @@ function SignUp() {
           </div>
         </div>
       </div>
-    </body>
+    </div>
   );
 }
 

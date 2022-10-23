@@ -2,7 +2,8 @@ import "../CSS/Login.css";
 import password_hide from "../Images/password-hide.png";
 import password_show from "../Images/password-show.png";
 import { useState, useEffect } from "react";
-import axios from "../api/Axios";
+import axios from "axios";
+
 
 const Login = ({ setIsLogin }) => {
   const [passwordView, setPasswordView] = useState(false);
@@ -19,16 +20,19 @@ const Login = ({ setIsLogin }) => {
   const loginSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/user/login", {
+      const res = await axios.get("http://localhost:3001/user/verify", {
         username: user.name,
         email: user.email,
         password: user.password,
       });
       setUser({ name: "", email: "", password: "" });
       localStorage.setItem("tokenStore", res.data.token);
-      setIsLogin(true);
+      //setIsLogin(true);
+      console.log("I am logged in")
+      window.location.href = "/home";
     } catch (err) {
-      err.response.data.msg && setErr(err.response.data.msg);
+      //err.response.data.msg && setErr(err.response.data.msg);
+      console.log(`${err} This is my Error`)
     }
   };
 
@@ -39,7 +43,7 @@ const Login = ({ setIsLogin }) => {
   useEffect(() => {}, [passwordView]);
 
   return (
-    <body>
+    <div>
       <div className="wrapper login">
         <h1 className="title">
           Soft<span>Notes</span>
@@ -53,7 +57,7 @@ const Login = ({ setIsLogin }) => {
                 <br />
                 For Free!
               </p>
-              <a href="https://google.com" className="btn">
+              <a href="/signup" className="btn">
                 Sign Up
               </a>
             </div>
@@ -102,7 +106,7 @@ const Login = ({ setIsLogin }) => {
           </div>
         </div>
       </div>
-    </body>
+    </div>
   );
 };
 

@@ -10,4 +10,7 @@ router.post("/login", users.loginUser);
 // Token Verification
 router.get("/verify", users.verifiedToken);
 
+// Logout
+router.get("/logout", (req, res) => {return res.clearCookie("jwt-token")})
+
 module.exports = router;
