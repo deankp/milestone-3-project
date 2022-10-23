@@ -1,17 +1,27 @@
 import "../CSS/Home.css";
 import upArrow from "../Images/up-arrow.png";
-import React from "react"
-import Logout from "./Logout"
+import CreateNote from "./CreateNote";
+import { useState, useEffect } from "react";
 
 function Home() {
-  
+  var [createNote, setCreateNote] = useState(false);
+
   return (
     <div className="homeWrapper">
       <div className="homeContainer home">
         <a id="top"></a>
-        <div className="add">
-          <p>+</p>
-        </div>
+        {createNote === false && (
+          <a href="#top">
+            <div
+              className="add"
+              onClick={() => {
+                setCreateNote(true);
+              }}
+            >
+              <h2>+</h2>
+            </div>
+          </a>
+        )}
         <nav>
           <a href="#top">
             <img src={upArrow} />
@@ -20,8 +30,8 @@ function Home() {
             Soft<span>Notes</span>
           </h1>
           <p>Sort</p>
-          <Logout/>
         </nav>
+        {createNote && <CreateNote setCreateNote={setCreateNote} />}
         <div className="searchBar">
           <input type="text" placeholder="search..." />
         </div>
