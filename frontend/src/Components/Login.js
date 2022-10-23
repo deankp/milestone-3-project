@@ -1,11 +1,10 @@
-import React from "react";
 import "../CSS/Login.css";
 import password_hide from "../Images/password-hide.png";
 import password_show from "../Images/password-show.png";
-import { useState, useEffect, useRef } from "react";
-import axios from "axios";
+import { useState, useEffect } from "react";
+import axios from "../api/axios";
 
-const Login = () => {
+const Login = ({ setIsLogin }) => {
   const [passwordView, setPasswordView] = useState(false);
 
   const [user, setUser] = useState({ name: "", email: "", password: "" });
@@ -17,16 +16,17 @@ const Login = () => {
     setErr("");
   };
 
-  const registerSubmit = async (e) => {
+  const loginSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/user/register", {
+      const res = await axios.post("/user/login", {
         username: user.name,
         email: user.email,
         password: user.password,
       });
       setUser({ name: "", email: "", password: "" });
-      setErr(res.data.msg);
+      localStorage.setItem("tokenStore", res.data.token);
+      setIsLogin(true);
     } catch (err) {
       err.response.data.msg && setErr(err.response.data.msg);
     }
@@ -62,7 +62,7 @@ const Login = () => {
           <div className="col-right">
             <div className="login-form">
               <h2>Login</h2>
-              <form onSubmit={registerSubmit}>
+              <form onSubmit={loginSubmit}>
                 <p>
                   <label>
                     Username/Email address<span>*</span>
@@ -96,6 +96,7 @@ const Login = () => {
                 <p>
                   <input type="submit" value="Sign In" />
                 </p>
+                <h3>{err}</h3>
               </form>
             </div>
           </div>

@@ -1,8 +1,8 @@
 import "../CSS/SignUp.css";
 import password_hide from "../Images/password-hide.png";
 import password_show from "../Images/password-show.png";
-import { useState, useEffect, useRef } from "react";
-import axios from "axios";
+import { useState, useEffect } from "react";
+import axios from "../api/axios";
 
 function SignUp() {
   const [passwordView, setPasswordView] = useState(false);
@@ -121,7 +121,7 @@ function SignUp() {
                   />
                 </div>
               </div>
-              <div className="input">
+              {/* <div className="input">
                 <p>
                   <label>
                     Birthdate<span>*</span>
@@ -132,10 +132,11 @@ function SignUp() {
                     <input type="date" autoComplete="off" required />
                   </p>
                 </div>
-              </div>
+              </div> */}
               <div className="submit">
                 <input type="submit" value="Submit" />
               </div>
+              <h3>{err}</h3>
             </form>
           </div>
         </div>
