@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       {isLogin ? <Notes /> : <Login />}
-      {/* <Login /> */}
+      {/* <Login />  */}
       <SignUp />
       <Home />
     </div>

@@ -1,12 +1,17 @@
 import "../CSS/Home.css";
-
+import upArrow from "../Images/up-arrow.png";
 function Home() {
   return (
     <div className="homeWrapper">
       <div className="homeContainer home">
         <a id="top"></a>
+        <div className="add">
+          <p>+</p>
+        </div>
         <nav>
-          <a href="#top">Top</a>
+          <a href="#top">
+            <img src={upArrow} />
+          </a>
           <h1 className="title">
             Soft<span>Notes</span>
           </h1>
