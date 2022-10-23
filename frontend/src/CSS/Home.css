@@ -42,6 +42,7 @@ body{
     border-bottom: 5px solid #D55534;
     justify-content: center;
     align-items: center;
+    z-index: 100;
 }
 
 .home nav h1{
@@ -91,6 +92,7 @@ body{
 }
 
 .note{
+    top:0;
     background-color: rgb(131, 207, 255);
     width: 300px;
     margin: 20px 40px;
@@ -99,6 +101,11 @@ body{
     border-radius: 10px;
     /* border: 1px solid black;  */
     box-shadow: 0 0 10px #818181;
+    transition: 1s;
+}
+
+.note:hover{
+    scale: 1.3;
 }
 
 .note::-webkit-scrollbar { width: 0 !important }
@@ -126,35 +133,10 @@ body{
     margin: 10px 30px;
 }
 
-@media(max-width: 1140px){
-    .notesContainer{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-    .note{
-        margin:20px 10px;
-        width:450px
-    }
-}
-
-@media(max-width: 939px){
-    .notesContainer{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-    .note{
-        margin:20px 10px;
-        width:550px;
-    }
-}
-
-
 .add{
     display: flex;
     position: sticky;
-    background-color: #ffffff;
+    background-color: #e7e7e7;
     color:#D55534;
     width: 90px;
     height: 90px;
@@ -166,6 +148,8 @@ body{
     align-items: center;
     opacity: .7;
     border: 2px #666666 dashed ;
+    cursor: pointer;
+    z-index: 50
 }
 
 .add:hover{
@@ -189,3 +173,37 @@ body{
     }
 
   }
+
+  @media(max-width: 1154px){
+    .notesContainer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .note{
+        margin:20px 10px;
+        width:450px;
+        height: 35vh;
+    }
+}
+
+@media(max-width: 940px){
+    .notesContainer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .note{
+        margin:20px 10px;
+        width:550px;
+        height: 40vh;
+    }
+}
+
+a{
+    text-decoration: none;
+}
+
+#top{
+    height: 0;
+}
