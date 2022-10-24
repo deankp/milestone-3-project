@@ -1,7 +1,21 @@
-import React from "react";
+// import React from "react";
+// import Nav from "./Nav";
+// import Home from "./Home";
+// import CreateNote from "./CreateNote";
+// import EditNote from "./EditNote";
+// import { BrowserRouter as Router, Route } from "react-router-dom";
 
-export default function Notes() {
-  return (
-  <div>Notes</div>
-  );
-}
+// export default function Notes({ setIsLogin }) {
+//   return (
+//     <Router>
+//       <div className="notes-page">
+//         <Nav setIsLogin={setIsLogin} />
+//         <section>
+//           <Route path="/" component={Home} exact />
+//           <Route path="/create" component={CreateNote} exact />
+//           <Route path="/edit/:id" component={EditNote} exact />
+//         </section>
+//       </div>
+//     </Router>
+//   );
+// }

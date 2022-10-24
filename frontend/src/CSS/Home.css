@@ -104,6 +104,33 @@ body{
     transition: 1s;
 }
 
+/* DEAN EDITS */
+.note .close{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    background: transparent;
+    border : none;
+    outline: none;
+    color: #D55534;
+    overflow: hidden;
+}
+/* DEAN EDIT */
+/* DEAN EDITS */
+.note .note-footer{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    overflow: hidden;
+}
+/* DEAN EDITS */
 .note:hover{
     scale: 1.3;
 }

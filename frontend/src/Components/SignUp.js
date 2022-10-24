@@ -2,8 +2,7 @@ import "../CSS/SignUp.css";
 import password_hide from "../Images/password-hide.png";
 import password_show from "../Images/password-show.png";
 import { useState, useEffect } from "react";
-import Base from "../api/Axios";
-import axios from "axios"
+import axios from "axios";
 
 function SignUp(props) {
   const [passwordView, setPasswordView] = useState(false);
@@ -28,10 +27,10 @@ function SignUp(props) {
       setUser({ name: "", email: "", password: "" });
       setErr(res.data);
       props.setIsLogin(true);
-      window.location.href = "/home"
+      window.location.href = "/home";
     } catch (err) {
       //err.response.data && setErr(err.response.data);
-      console.log(err)
+      console.log(err);
     }
   };
 

@@ -1,6 +1,7 @@
 import "../CSS/CreateNote.css";
 import { useState, useEffect } from "react";
 
+
 function CreateNote(props) {
   var [active, setActive] = useState("pickOne");
 
