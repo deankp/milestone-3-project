@@ -10,7 +10,7 @@ function IsLogin() {
   useEffect(() => {
     console.log("Hitting it");
     const checkLogin = async () => {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("tokenStore");
       if (token) {
         const verified = await axios.get("http://localhost:3001/users/verify", {
           headers: { Authorization: token },

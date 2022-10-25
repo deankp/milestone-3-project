@@ -101,6 +101,7 @@ function SignUp(props) {
                     onChange={onChangeInput}
                   />
                   <img
+                    alt="password show"
                     onClick={changeView}
                     src={passwordView ? password_hide : password_show}
                   />
@@ -122,6 +123,7 @@ function SignUp(props) {
                     onChange={onChangeInput}
                   />
                   <img
+                    alt="password show"
                     onClick={changeConfirmView}
                     src={confirmPasswordView ? password_hide : password_show}
                   />

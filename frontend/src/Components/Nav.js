@@ -9,8 +9,9 @@ function Nav() {
     <header>
       <div>
         <nav>
+          {/* <a id="top"></a> */}
           <a href="#top">
-            <img src={upArrow} />
+            <img alt="up arrow" src={upArrow} />
           </a>
           <h1 className="title">
             <Link to="/home">

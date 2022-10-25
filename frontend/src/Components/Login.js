@@ -4,8 +4,7 @@ import password_show from "../Images/password-show.png";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-
-const Login = ({ setIsLogin }) => {
+const Login = () => {
   const [passwordView, setPasswordView] = useState(false);
 
   const [user, setUser] = useState({ name: "", email: "", password: "" });
@@ -28,11 +27,11 @@ const Login = ({ setIsLogin }) => {
       setUser({ name: "", email: "", password: "" });
       localStorage.setItem("tokenStore", res.data.token);
       //setIsLogin(true);
-      console.log("I am logged in")
+      console.log("I am logged in");
       window.location.href = "/home";
     } catch (err) {
       //err.response.data.msg && setErr(err.response.data.msg);
-      console.log(`${err} This is my Error`)
+      console.log(`${err} This is my Error`);
     }
   };
 
@@ -92,6 +91,7 @@ const Login = ({ setIsLogin }) => {
                       onChange={onChangeInput}
                     />
                     <img
+                      alt="password show"
                       onClick={changeView}
                       src={passwordView ? password_hide : password_show}
                     />

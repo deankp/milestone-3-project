@@ -3,7 +3,7 @@ import CreateNote from "./CreateNote";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Nav from "./Nav";
-import { format } from "date-fns";
+// import { format } from "date-fns";
 import axios from "axios";
 
 function Home() {
@@ -20,7 +20,7 @@ function Home() {
   };
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("tokenStore");
     setToken(token);
     if (token) {
       getNotes(token);
@@ -44,7 +44,6 @@ function Home() {
   return (
     <div className="homeWrapper">
       <div className="homeContainer home">
-        <a id="top"></a>
         {createNote === false && (
           <a href="#top">
             <div
