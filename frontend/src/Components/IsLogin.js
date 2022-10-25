@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import SignUp from "./SignUp";
+// import SignUp from "./SignUp";
 import Login from "./Login";
 import Home from "./Home";
 
@@ -25,6 +25,12 @@ function IsLogin() {
     checkLogin();
   }, [isLogin]);
 
+  // const [onLogin, setOnLogin] = useState(false)
+  // const style = {
+  //   visibility: onLogin ? "visible" : "hidden",
+  //   opacity: onLogin ? 1 : 0
+  // }
+
   return (
     <div>
       {/* {console.log(isLogin)} */}
@@ -34,7 +40,7 @@ function IsLogin() {
         <Login setIsLogin={setIsLogin} />
       )}
       {/* <Login /> */}
-      {<SignUp setIsLogin={setIsLogin} />}
+      {/* {<SignUp setIsLogin={setIsLogin} />} */}
     </div>
   );
 }
