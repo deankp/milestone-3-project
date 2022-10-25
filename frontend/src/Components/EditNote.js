@@ -1,34 +1,55 @@
 import "../CSS/CreateNote.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-function CreateNote(props) {
+function EditNote(props) {
+  const params = useParams();
   const [note, setNote] = useState({
     title: "",
     content: "",
     // date: "",
+    id: "",
   });
 
   const history = useNavigate();
+
+  useEffect(() => {
+    const getNote = async () => {
+      const token = localStorage.getItem("tokenStore");
+      if (params.id) {
+        const res = await axios.get(`/api/notes/${params.id}`, {
+          headers: { Authorization: token },
+        });
+        console.log(params.id);
+        console.log(res);
+        setNote({
+          title: res.data.title,
+          content: res.data.title,
+          id: res.data._id,
+        });
+      }
+    };
+    getNote();
+  }, [params.id]);
 
   const onChangeInput = (e) => {
     const { name, value } = e.target;
     setNote({ ...note, [name]: value });
   };
 
-  const createNote = async (e) => {
+  const editNote = async (e) => {
     e.preventDefault();
     try {
       const token = localStorage.getItem("tokenStore");
       if (token) {
-        const { title, content } = note;
-        const newNote = {
+        const { title, content, id } = note;
+        const editNote = {
           title,
           content,
         };
 
-        await axios.post("/api/notes", newNote, {
+        await axios.put(`/api/notes/${id}`, editNote, {
           headers: { Authorization: token },
         });
 
@@ -46,14 +67,14 @@ function CreateNote(props) {
       <div className={`createContainer ${active}`}>
         <p
           className="exit"
-          onClick={() => {
+          onClick={(props) => {
             props.setCreateNote(false);
           }}
         >
           X
         </p>
-        <h2>Create your note</h2>
-        <form onSubmit={createNote}>
+        <h2>Edit your note</h2>
+        <form onSubmit={editNote}>
           <input
             type="text"
             defaultValue={note.title}
@@ -115,7 +136,7 @@ function CreateNote(props) {
                 }}
               ></div>
             </div>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Edit" />
           </div>
         </form>
       </div>
@@ -123,4 +144,4 @@ function CreateNote(props) {
   );
 }
 
-export default CreateNote;
+export default EditNote;
