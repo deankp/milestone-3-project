@@ -92,7 +92,10 @@ function Home() {
           ))}
 
           <div className="note">
-            <h2 title={notes.title}>Title</h2>
+            <p className="date">Date</p>
+            <h2 className="title" title={notes.title}>
+              Title
+            </h2>
             {/* <p className="catagory">Catagory</p> */}
             <div className="text">
               <h3>
@@ -105,13 +108,13 @@ function Home() {
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </h3>
             </div>
-            <div className="note-footer">
+            {/* <div className="note-footer">
               <p>
                 <Link to="/edit/:id">Edit</Link>
               </p>
               <p className="date">Date</p>
-            </div>
-            <button className="close">x</button>
+            </div> */}
+            {/* <button className="close">x</button> */}
           </div>
           <div className="note">
             <p className="date">Date</p>
