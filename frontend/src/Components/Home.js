@@ -92,11 +92,17 @@ function Home() {
           ))}
 
           <div className="note">
+            <div className="delete">
+              <p onClick={console.log("test")}>X</p>
+            </div>
+            <div className="edit">
+              <Link to="/edit/:id">Edit</Link>
+            </div>
             <p className="date">Date</p>
             <h2 className="title" title={notes.title}>
               Title
             </h2>
-            {/* <p className="catagory">Catagory</p> */}
+            <p className="catagory">Catagory</p>
             <div className="text">
               <h3>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -117,6 +123,12 @@ function Home() {
             {/* <button className="close">x</button> */}
           </div>
           <div className="note">
+            <div className="delete">
+              <p onClick={console.log("test")}>X</p>
+            </div>
+            <div className="edit">
+              <Link to="/edit/:id">Edit</Link>
+            </div>
             <p className="date">Date</p>
             <h2 className="title">Title</h2>
             <p className="catagory">Catagory</p>
@@ -132,6 +144,12 @@ function Home() {
             </h3>
           </div>
           <div className="note">
+            <div className="delete">
+              <p onClick={console.log("test")}>X</p>
+            </div>
+            <div className="edit">
+              <Link to="/edit/:id">Edit</Link>
+            </div>
             <p className="date">Date</p>
             <h2 className="title">Title</h2>
             <p className="catagory">Catagory</p>
@@ -141,12 +159,24 @@ function Home() {
             </h3>
           </div>
           <div className="note">
+            <div className="delete">
+              <p onClick={console.log("test")}>X</p>
+            </div>
+            <div className="edit">
+              <Link to="/edit/:id">Edit</Link>
+            </div>
             <p className="date">Date</p>
             <h2 className="title">Title</h2>
             <p className="catagory">Catagory</p>
             <h3 className="text">Nulla at volutpat diam ut venenatis tellus</h3>
           </div>
           <div className="note">
+            <div className="delete">
+              <p onClick={console.log("test")}>X</p>
+            </div>
+            <div className="edit">
+              <Link to="/edit/:id">Edit</Link>
+            </div>
             <p className="date">Date</p>
             <h2 className="title">Title</h2>
             <p className="catagory">Catagory</p>
@@ -163,6 +193,12 @@ function Home() {
             </h3>
           </div>
           <div className="note">
+            <div className="delete">
+              <a href="https://google.com">X</a>
+            </div>
+            <div className="edit">
+              <Link to="/edit/:id">Edit</Link>
+            </div>
             <p className="date">Date</p>
             <h2 className="title">Title</h2>
             <p className="catagory">Catagory</p>
@@ -171,18 +207,36 @@ function Home() {
             </h3>
           </div>
           <div className="note">
+            <div className="delete">
+              <p onClick={console.log("test")}>X</p>
+            </div>
+            <div className="edit">
+              <Link to="/edit/:id">Edit</Link>
+            </div>
             <p className="date">Date</p>
             <h2 className="title">Title</h2>
             <p className="catagory">Catagory</p>
             <h3 className="text">Ut consequat</h3>
           </div>
           <div className="note">
+            <div className="delete">
+              <p onClick={console.log("test")}>X</p>
+            </div>
+            <div className="edit">
+              <Link to="/edit/:id">Edit</Link>
+            </div>
             <p className="date">Date</p>
             <h2 className="title">Title</h2>
             <p className="catagory">Catagory</p>
             <h3 className="text">Tempor orci eu lobortis</h3>
           </div>
           <div className="note">
+            <div className="delete">
+              <p onClick={console.log("test")}>X</p>
+            </div>
+            <div className="edit">
+              <Link to="/edit/:id">Edit</Link>
+            </div>
             <p className="date">Date</p>
             <h2 className="title">Title</h2>
             <p className="catagory">Catagory</p>
@@ -196,51 +250,6 @@ function Home() {
               tellus. Orci dapibus ultrices in iaculis nunc sed augue lacus
               viverra.
             </h3>
-          </div>
-          <div className="note">
-            <p className="date">Date</p>
-            <h2 className="title">Title</h2>
-            <p className="catagory">Catagory</p>
-            <h3 className="text">
-              Cursus mattis molestie a iaculis at erat pellentesque adipiscing
-              commodo. Dolor sit amet consectetur adipiscing.
-            </h3>
-          </div>
-          <div className="note">
-            <p className="date">Date</p>
-            <h2 className="title">Title</h2>
-            <p className="catagory">Catagory</p>
-            <h3 className="text">Nulla at volutpat diam ut venenatis tellus</h3>
-          </div>
-          <div className="note">
-            <p className="date">Date</p>
-            <h2 className="title">Title</h2>
-            <p className="catagory">Catagory</p>
-            <h3 className="text">
-              Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit
-              sed. Pretium viverra suspendisse potenti nullam ac tortor vitae
-              purus faucibus. Augue eget arcu dictum varius. Aenean euismod
-              elementum nisi quis eleifend quam. Mauris pellentesque pulvinar
-              pellentesque habitant morbi tristique senectus et netus. Nec
-              ultrices dui sapien eget mi proin sed. Eu tincidunt tortor aliquam
-              nulla facilisi cras fermentum. Magna fringilla urna porttitor
-              rhoncus dolor. Et netus et malesuada fames ac turpis egestas sed
-              tempus.
-            </h3>
-          </div>
-          <div className="note">
-            <p className="date">Date</p>
-            <h2 className="title">Title</h2>
-            <p className="catagory">Catagory</p>
-            <h3 className="text">
-              Nibh sit amet commodo nulla facilisi nullam vehicula ipsum.
-            </h3>
-          </div>
-          <div className="note">
-            <p className="date">Date</p>
-            <h2 className="title">Title</h2>
-            <p className="catagory">Catagory</p>
-            <h3 className="text">Ut consequat</h3>
           </div>
         </div>
       </div>
