@@ -6,13 +6,13 @@ import Logout from "./Logout";
 
 function Nav() {
   return (
-    <nav>
+    <nav className="nav">
       {/* <a id="top"></a> */}
       <a href="#top">
         <img alt="up arrow" src={upArrow} />
       </a>
       <h1 className="title">
-        <Link to="/home">
+        <Link className="title" to="/home">
           Soft<span>Notes</span>
         </Link>
       </h1>

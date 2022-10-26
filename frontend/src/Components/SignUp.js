@@ -57,6 +57,7 @@ function SignUp(props) {
           <li></li>
           <li></li>
           <li></li>
+          <li></li>
         </ul>
       </div>
       <div className="wrapper login">

@@ -104,6 +104,13 @@
     animation-duration: 16s;
 }
 
+.circles li:nth-child(11){
+    left: 35%;
+    width: 65px;
+    height: 65px;
+    animation-delay: 0s;
+    animation-duration: 30s;
+}
 
 
 @keyframes animate {
@@ -137,5 +144,4 @@
         opacity: 0;
         border-radius: 0%;
     }
-
 }

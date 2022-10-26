@@ -2,6 +2,7 @@ import "../CSS/CreateNote.css";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Delete from "../Images/delete.png";
 
 function CreateNote(props) {
   const [activeColor, setActiveColor] = useState("colorOne");
@@ -51,7 +52,7 @@ function CreateNote(props) {
             props.setCreateNote(false);
           }}
         >
-          X
+          <img src={Delete} />
         </p>
         <h2>Create your note</h2>
         <form onSubmit={createNote}>

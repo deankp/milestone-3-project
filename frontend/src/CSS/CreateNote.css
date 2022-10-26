@@ -70,10 +70,10 @@ margin: 0 10px 0 10px;
     color: red;
     cursor: pointer;
     width: 20px;
+    opacity: .5;
 }
 .createNote .exit:hover{
-    border: 1px solid red;
-    margin: -1px;
+    opacity: 1;
 }
 
 .createNote h2{
@@ -134,9 +134,13 @@ margin: 0 10px 0 10px;
 }
 
 .catagories .active{
-    background-color: #ececec;
+    background-color: rgba(58, 58, 58, 0.25);
 }
 
 .createNote p{
     margin: 10px 0 10px 0px;
+}
+
+.createNote img{
+    width:100%
 }
