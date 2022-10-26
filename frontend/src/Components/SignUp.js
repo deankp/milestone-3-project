@@ -45,10 +45,21 @@ function SignUp(props) {
 
   return (
     <div>
+      <div class="area">
+        <ul class="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
       <div className="wrapper login">
-        <h1 className="title">
-          Soft<span>Notes</span>
-        </h1>
         <div className="SignUpWrapper SignUp">
           <div className="SignUpContainer">
             <div className="SignUp-form">

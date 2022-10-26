@@ -30,6 +30,7 @@ body{
     display: flex;
     background: #FFF0CE;
     box-shadow: 0 0 5px #999999;
+    border-radius: 25px;
 }
     
     
@@ -45,6 +46,7 @@ body{
     width: 60%;
     clip-path: polygon(0 0, 0% 100%, 100% 0 );
     background: #83B4B3;
+    border-radius: 25px 0px 0px 25px;
 }
     
 .login .col-right{

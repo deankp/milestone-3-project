@@ -16,6 +16,9 @@ body{
     width: 100%;
     max-width: 1140px;
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
     
 .SignUpContainer{
