@@ -3,6 +3,8 @@ import CreateNote from "./CreateNote";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Nav from "./Nav";
+import Edit from "../Images/edit.png";
+import Delete from "../Images/delete.png";
 // import { format } from "date-fns";
 import axios from "axios";
 
@@ -93,10 +95,12 @@ function Home() {
 
           <div className="note">
             <div className="delete">
-              <p onClick={console.log("test")}>X</p>
+              <img src={Delete} alt="Delete Button" />
             </div>
             <div className="edit">
-              <Link to="/edit/:id">Edit</Link>
+              <Link to="/edit/:id">
+                <img src={Edit} />
+              </Link>
             </div>
             <p className="date">Date</p>
             <h2 className="title" title={notes.title}>
@@ -124,10 +128,12 @@ function Home() {
           </div>
           <div className="note">
             <div className="delete">
-              <p onClick={console.log("test")}>X</p>
+              <img src={Delete} alt="Delete Button" />
             </div>
             <div className="edit">
-              <Link to="/edit/:id">Edit</Link>
+              <Link to="/edit/:id">
+                <img src={Edit} />
+              </Link>
             </div>
             <p className="date">Date</p>
             <h2 className="title">Title</h2>
@@ -145,10 +151,12 @@ function Home() {
           </div>
           <div className="note">
             <div className="delete">
-              <p onClick={console.log("test")}>X</p>
+              <img src={Delete} alt="Delete Button" />
             </div>
             <div className="edit">
-              <Link to="/edit/:id">Edit</Link>
+              <Link to="/edit/:id">
+                <img src={Edit} />
+              </Link>
             </div>
             <p className="date">Date</p>
             <h2 className="title">Title</h2>
@@ -160,22 +168,12 @@ function Home() {
           </div>
           <div className="note">
             <div className="delete">
-              <p onClick={console.log("test")}>X</p>
+              <img src={Delete} alt="Delete Button" />
             </div>
             <div className="edit">
-              <Link to="/edit/:id">Edit</Link>
-            </div>
-            <p className="date">Date</p>
-            <h2 className="title">Title</h2>
-            <p className="catagory">Catagory</p>
-            <h3 className="text">Nulla at volutpat diam ut venenatis tellus</h3>
-          </div>
-          <div className="note">
-            <div className="delete">
-              <p onClick={console.log("test")}>X</p>
-            </div>
-            <div className="edit">
-              <Link to="/edit/:id">Edit</Link>
+              <Link to="/edit/:id">
+                <img src={Edit} />
+              </Link>
             </div>
             <p className="date">Date</p>
             <h2 className="title">Title</h2>
@@ -194,10 +192,12 @@ function Home() {
           </div>
           <div className="note">
             <div className="delete">
-              <a href="https://google.com">X</a>
+              <img src={Delete} alt="Delete Button" />
             </div>
             <div className="edit">
-              <Link to="/edit/:id">Edit</Link>
+              <Link to="/edit/:id">
+                <img src={Edit} />
+              </Link>
             </div>
             <p className="date">Date</p>
             <h2 className="title">Title</h2>
@@ -208,10 +208,12 @@ function Home() {
           </div>
           <div className="note">
             <div className="delete">
-              <p onClick={console.log("test")}>X</p>
+              <img src={Delete} alt="Delete Button" />
             </div>
             <div className="edit">
-              <Link to="/edit/:id">Edit</Link>
+              <Link to="/edit/:id">
+                <img src={Edit} />
+              </Link>
             </div>
             <p className="date">Date</p>
             <h2 className="title">Title</h2>
@@ -220,10 +222,12 @@ function Home() {
           </div>
           <div className="note">
             <div className="delete">
-              <p onClick={console.log("test")}>X</p>
+              <img src={Delete} alt="Delete Button" />
             </div>
             <div className="edit">
-              <Link to="/edit/:id">Edit</Link>
+              <Link to="/edit/:id">
+                <img src={Edit} />
+              </Link>
             </div>
             <p className="date">Date</p>
             <h2 className="title">Title</h2>
@@ -232,10 +236,12 @@ function Home() {
           </div>
           <div className="note">
             <div className="delete">
-              <p onClick={console.log("test")}>X</p>
+              <img src={Delete} alt="Delete Button" />
             </div>
             <div className="edit">
-              <Link to="/edit/:id">Edit</Link>
+              <Link to="/edit/:id">
+                <img src={Edit} />
+              </Link>
             </div>
             <p className="date">Date</p>
             <h2 className="title">Title</h2>

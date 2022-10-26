@@ -32,7 +32,7 @@ body{
 
 }
 
-.home nav{
+nav{
     display: flex;
     background-color: rgb(255, 255, 255);
     width: 100%;
@@ -89,6 +89,7 @@ body{
     flex-wrap: wrap;
     justify-content: flex-start;
     background-color: #ffffff;
+    padding-bottom: 25px;
 }
 
 .note{
@@ -102,10 +103,12 @@ body{
     /* border: 1px solid black;  */
     box-shadow: 0 0 10px #818181;
     transition: 1s;
+    font-size: 16px;
 }
 
 .note:hover{
     scale: 1.3;
+    font-size: 13px;
 }
 
 .note::-webkit-scrollbar { width: 0 !important }
@@ -115,7 +118,6 @@ body{
 .note .date{
     text-align: right;
     margin: 10px;
-    font-size:medium;
 }
 .note .title{
     text-align: left;
@@ -149,7 +151,8 @@ body{
     opacity: .7;
     border: 2px #666666 dashed ;
     cursor: pointer;
-    z-index: 50
+    z-index: 50;
+    font-size: x-large;
 }
 
 .add:hover{
@@ -167,10 +170,9 @@ a{
 }
 
 .home .delete{
-    background-color: red;
     border-radius: 50%;
-    height: 30px;
-    width:30px;
+    height: 25px;
+    width:25px;
     justify-content: center;
     align-items: center;
     display: none;
@@ -181,10 +183,14 @@ a{
     position: sticky;
     top: 2%;
     display: flex;
+    cursor: pointer;
+}
+
+.home .delete:hover{
+    opacity: 1;
 }
 
 .home .edit{
-    background-color: red;
     border-radius: 50%;
     height: 30px;
     width:30px;
@@ -194,9 +200,9 @@ a{
     opacity: .5;
 }
 
-.edit a, .delete a{
-    color: black;
+.edit img, .delete img{
     text-decoration: none;
+    width:100%
 }
 
 .note:hover .edit{
@@ -206,8 +212,8 @@ a{
     display: flex
 }
 
-.home .edit{
-    color: blanchedalmond
+.home .edit:hover{
+    opacity: 1;
 }
 
 @keyframes rotate {
@@ -227,6 +233,14 @@ a{
   }
 
   @media(max-width: 1154px){
+    .homeWrapper{
+        width:100%;
+        margin:0;
+    }
+    .homeContainer{
+        width:100%;
+        margin:0;
+    }
     .notesContainer{
         display: flex;
         flex-wrap: wrap;
@@ -235,10 +249,31 @@ a{
     .note{
         margin:20px 10px;
         width:450px;
+        height: 290px;
+        font-size: 19px;
+    }
+    .note:hover{
+        scale:1.15;
+        font-size: 15px;
+    }
+    .note:hover .edit{
+        top: 255px;
+        left: 92%;
+    }
+    .home .add{
+        top: 90%;
     }
 }
 
 @media(max-width: 940px){
+    .homeWrapper{
+        width:100%;
+        margin:0;
+    }
+    .homeContainer{
+        width:100%;
+        margin:0;
+    }
     .notesContainer{
         display: flex;
         flex-wrap: wrap;
@@ -247,6 +282,20 @@ a{
     .note{
         margin:20px 10px;
         width:550px;
+        height: 290px;
+        font-size: 19px;
+    }
+    .note:hover{
+        scale:1.05 ;
+        font-size: 16px
+    }
+    .note:hover .edit{
+        top: 257px;
+        left: 94%;
+    }
+    .home .add{
+        margin: 0;
+        left: 85%;
     }
 }
 
