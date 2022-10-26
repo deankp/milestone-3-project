@@ -84,16 +84,19 @@ margin: 0 10px 0 10px;
     background-color: rgb(255, 252, 232);
 }
 .colorTwo{
-    background-color: rgb(210, 245, 140);
+    background-color: rgb(133, 182, 133);
 }
 .colorThree{
     background-color: rgb(234, 170, 190);
 }
 .colorFour{
-    background-color: rgb(242, 177, 73);
+    background-color: rgb(171, 132, 255);
 }
 .colorFive{
-    background-color: aquamarine;
+    background-color: rgb(131, 207, 255)
+}
+.colorSix{
+    background-color: rgb(255, 255, 255)
 }
 
 .createNote input[type="submit"]{

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import LogoutImg from "../Images/logout.PNG";
 
 function Logout() {
   const logOut = () => {
@@ -16,7 +17,9 @@ function Logout() {
   };
   return (
     <p onClick={logOut}>
-      <Link>Logout</Link>
+      <Link>
+        <img src={LogoutImg} alt="Logout button" />
+      </Link>
     </p>
   );
 }

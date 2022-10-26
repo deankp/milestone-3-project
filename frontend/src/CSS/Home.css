@@ -26,38 +26,32 @@ body{
     width: 100%;
     max-width: 1200px;
     height: auto;
-    background: rgba(255, 255, 255);
+    background: rgb(198, 241, 255);
     box-shadow: 0 0 5px #999999;
-
 }
 
 nav{
     display: flex;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(210, 210, 210);
     width: 100%;
+    height:70px;
     text-align: center;
     top: 0;
     position: sticky;
-    border-bottom: 5px solid #D55534;
+    border-bottom: 5px solid #383838;
     justify-content: center;
     align-items: center;
     z-index: 100;
 }
 
 .home nav h1{
-    width: 1000px
-}
-
-.home nav p{
-    width: 100;
-}
-
-.home nav a{
-    width: 100;
+    width: 750px;
+    font-size: xx-large;
 }
 
 .home nav img{
-    width: 30px;
+    width: 40px;
+    margin: 20px
 }
 
 .searchBar{
@@ -99,11 +93,12 @@ nav{
     flex-wrap: wrap;
     justify-content: flex-start;
     padding-bottom: 25px;
+    min-height: 100vh;
 }
 
 .note{
     top:0;
-    background-color: rgb(131, 207, 255);
+    /* background-color: rgb(131, 207, 255); */
     width: 300px;
     margin: 20px 40px;
     height: 270px;
@@ -127,7 +122,8 @@ nav{
 .note .date{
     text-align: right;
     margin: 10px;
-    color: #FFF0CE
+    color: #FFF0CE;
+    background-color: rgba(56, 56, 56, .7);
 }
 .note .title{
     text-align: left;
@@ -138,7 +134,9 @@ nav{
     text-align: left;
     margin: 10px 30px;
     font-size: small;
-    color: #D55534
+    color: #D55534;
+    background-color: rgba(56, 56, 56, .7);
+    width: fit-content;
 }
 
 .note .text{
