@@ -109,13 +109,13 @@ function Home() {
               </div>
             ))}
 
-            <div className="note">
+            <div className="note colorTwo">
               <div className="delete">
                 <img src={Delete} alt="Delete Button" />
               </div>
               <div className="edit">
                 <Link to="/edit/:id">
-                  <img src={Edit} />
+                  <img src={Edit} alt="Edit button" />
                 </Link>
               </div>
               <p className="date">Date</p>
@@ -143,13 +143,13 @@ function Home() {
             </div> */}
               {/* <button className="close">x</button> */}
             </div>
-            <div className="note">
+            <div className="note colorFive">
               <div className="delete">
                 <img src={Delete} alt="Delete Button" />
               </div>
               <div className="edit">
                 <Link to="/edit/:id">
-                  <img src={Edit} />
+                  <img src={Edit} alt="Edit button" />
                 </Link>
               </div>
               <p className="date">Date</p>
@@ -166,13 +166,13 @@ function Home() {
                 augue lacus viverra.
               </h3>
             </div>
-            <div className="note">
+            <div className="note colorFour">
               <div className="delete">
                 <img src={Delete} alt="Delete Button" />
               </div>
               <div className="edit">
                 <Link to="/edit/:id">
-                  <img src={Edit} />
+                  <img src={Edit} alt="Edit button" />
                 </Link>
               </div>
               <p className="date">Date</p>
@@ -183,13 +183,13 @@ function Home() {
                 commodo. Dolor sit amet consectetur adipiscing.
               </h3>
             </div>
-            <div className="note">
+            <div className="note colorOne">
               <div className="delete">
                 <img src={Delete} alt="Delete Button" />
               </div>
               <div className="edit">
                 <Link to="/edit/:id">
-                  <img src={Edit} />
+                  <img src={Edit} alt="Edit button" />
                 </Link>
               </div>
               <p className="date">Date</p>
@@ -207,13 +207,13 @@ function Home() {
                 turpis egestas sed tempus.
               </h3>
             </div>
-            <div className="note">
+            <div className="note colorThree">
               <div className="delete">
                 <img src={Delete} alt="Delete Button" />
               </div>
               <div className="edit">
                 <Link to="/edit/:id">
-                  <img src={Edit} />
+                  <img src={Edit} alt="Edit button" />
                 </Link>
               </div>
               <p className="date">Date</p>
@@ -223,13 +223,13 @@ function Home() {
                 Nibh sit amet commodo nulla facilisi nullam vehicula ipsum.
               </h3>
             </div>
-            <div className="note">
+            <div className="note colorTwo">
               <div className="delete">
                 <img src={Delete} alt="Delete Button" />
               </div>
               <div className="edit">
                 <Link to="/edit/:id">
-                  <img src={Edit} />
+                  <img src={Edit} alt="Edit button" />
                 </Link>
               </div>
               <p className="date">Date</p>
@@ -237,13 +237,13 @@ function Home() {
               <p className="catagory">Catagory</p>
               <h3 className="text">Ut consequat</h3>
             </div>
-            <div className="note">
+            <div className="note colorOne">
               <div className="delete">
                 <img src={Delete} alt="Delete Button" />
               </div>
               <div className="edit">
                 <Link to="/edit/:id">
-                  <img src={Edit} />
+                  <img src={Edit} alt="Edit button" />
                 </Link>
               </div>
               <p className="date">Date</p>
@@ -251,13 +251,13 @@ function Home() {
               <p className="catagory">Catagory</p>
               <h3 className="text">Tempor orci eu lobortis</h3>
             </div>
-            <div className="note">
+            <div className="note colorSix">
               <div className="delete">
                 <img src={Delete} alt="Delete Button" />
               </div>
               <div className="edit">
                 <Link to="/edit/:id">
-                  <img src={Edit} />
+                  <img src={Edit} alt="Edit button" />
                 </Link>
               </div>
               <p className="date">Date</p>
@@ -275,6 +275,7 @@ function Home() {
               </h3>
             </div>
           </div>
+          <p id="bottom"></p>
         </div>
       </div>
     </div>

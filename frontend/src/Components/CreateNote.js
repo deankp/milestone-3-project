@@ -52,7 +52,7 @@ function CreateNote(props) {
             props.setCreateNote(false);
           }}
         >
-          <img src={Delete} />
+          <img src={Delete} alt="Delete button" />
         </p>
         <h2>Create your note</h2>
         <form onSubmit={createNote}>
@@ -177,6 +177,14 @@ function CreateNote(props) {
                 }`}
                 onClick={() => {
                   setActiveColor("colorFive");
+                }}
+              ></div>
+              <div
+                className={`color colorSix ${
+                  activeColor === "colorSix" ? "active" : "notActive"
+                }`}
+                onClick={() => {
+                  setActiveColor("colorSix");
                 }}
               ></div>
             </div>
