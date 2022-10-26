@@ -1,4 +1,5 @@
 import "../CSS/Login.css";
+import "../CSS/Animation.css";
 import password_hide from "../Images/password-hide.png";
 import password_show from "../Images/password-show.png";
 import { useState, useEffect } from "react";
@@ -43,6 +44,20 @@ const Login = () => {
 
   return (
     <div>
+      <div class="area">
+        <ul class="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
       <div className="wrapper login">
         <h1 className="title">
           Soft<span>Notes</span>
