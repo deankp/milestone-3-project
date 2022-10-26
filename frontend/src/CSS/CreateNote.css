@@ -56,6 +56,7 @@ margin: 0 10px 0 10px;
 
 .createNote .active{
     border: 2px solid black;
+    color: rgb(49, 49, 49);
 }
 
 .createNote .notActive{
@@ -68,29 +69,30 @@ margin: 0 10px 0 10px;
     margin: 0;
     color: red;
     cursor: pointer;
-    width: 20px
+    width: 20px;
 }
 .createNote .exit:hover{
     border: 1px solid red;
+    margin: -1px;
 }
 
 .createNote h2{
     margin: 2px 0 5px 0
 }
 
-.pickOne{
+.colorOne{
     background-color: rgb(255, 252, 232);
 }
-.pickTwo{
+.colorTwo{
     background-color: rgb(210, 245, 140);
 }
-.pickThree{
-    background-color: rgb(207, 128, 153);
+.colorThree{
+    background-color: rgb(234, 170, 190);
 }
-.pickFour{
+.colorFour{
     background-color: rgb(242, 177, 73);
 }
-.pickFive{
+.colorFive{
     background-color: aquamarine;
 }
 
@@ -117,4 +119,24 @@ margin: 0 10px 0 10px;
 
 #top{
     height:0
+}
+
+.catagories{
+    display: flex;
+    padding-bottom: 7px;
+    border-bottom: 2px solid rgb(98, 98, 98);
+}
+
+.catagory{
+    margin: 0 10px 0 0px;
+    padding:0 3px 0 3px;
+    border-radius: 7px;
+}
+
+.catagories .active{
+    background-color: #ececec;
+}
+
+.createNote p{
+    margin: 10px 0 10px 0px;
 }

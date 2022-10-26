@@ -4,6 +4,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function CreateNote(props) {
+  const [activeColor, setActiveColor] = useState("colorOne");
+  const [activeCatagory, setActiveCatagory] = useState("other");
+
   const [note, setNote] = useState({
     title: "",
     content: "",
@@ -39,11 +42,9 @@ function CreateNote(props) {
     }
   };
 
-  const [active, setActive] = useState("pickOne");
-
   return (
     <div className="createNote">
-      <div className={`createContainer ${active}`}>
+      <div className={`createContainer ${activeColor}`}>
         <p
           className="exit"
           onClick={() => {
@@ -54,6 +55,69 @@ function CreateNote(props) {
         </p>
         <h2>Create your note</h2>
         <form onSubmit={createNote}>
+          <p>Catagory</p>
+          <div className="catagories">
+            <div
+              className={`catagory ${
+                activeCatagory === "personal" ? "active" : "notActive"
+              }`}
+              onClick={() => {
+                setActiveCatagory("personal");
+              }}
+            >
+              Personal
+            </div>
+            <div
+              className={`catagory ${
+                activeCatagory === "work" ? "active" : "notActive"
+              }`}
+              onClick={() => {
+                setActiveCatagory("work");
+              }}
+            >
+              Work
+            </div>
+            <div
+              className={`catagory ${
+                activeCatagory === "home" ? "active" : "notActive"
+              }`}
+              onClick={() => {
+                setActiveCatagory("home");
+              }}
+            >
+              Home
+            </div>
+            <div
+              className={`catagory ${
+                activeCatagory === "goal" ? "active" : "notActive"
+              }`}
+              onClick={() => {
+                setActiveCatagory("goal");
+              }}
+            >
+              Goal
+            </div>
+            <div
+              className={`catagory ${
+                activeCatagory === "reminder" ? "active" : "notActive"
+              }`}
+              onClick={() => {
+                setActiveCatagory("reminder");
+              }}
+            >
+              Reminder
+            </div>
+            <div
+              className={`catagory ${
+                activeCatagory === "other" ? "active" : "notActive"
+              }`}
+              onClick={() => {
+                setActiveCatagory("other");
+              }}
+            >
+              Other
+            </div>
+          </div>
           <input
             type="text"
             defaultValue={note.title}
@@ -71,47 +135,47 @@ function CreateNote(props) {
             <div className="colors">
               {/* Color */}
               <div
-                className={`color pickOne ${
-                  active === "pickOne" ? "active" : "notActive"
+                className={`color colorOne ${
+                  activeColor === "colorOne" ? "active" : "notActive"
                 }`}
                 onClick={() => {
-                  setActive("pickOne");
+                  setActiveColor("colorOne");
                 }}
               ></div>
               {/* Color */}
               <div
-                className={`color pickTwo ${
-                  active === "pickTwo" ? "active" : "notActive"
+                className={`color colorTwo ${
+                  activeColor === "colorTwo" ? "active" : "notActive"
                 }`}
                 onClick={() => {
-                  setActive("pickTwo");
+                  setActiveColor("colorTwo");
                 }}
               ></div>
               {/* Color */}
               <div
-                className={`color pickThree ${
-                  active === "pickThree" ? "active" : "notActive"
+                className={`color colorThree ${
+                  activeColor === "colorThree" ? "active" : "notActive"
                 }`}
                 onClick={() => {
-                  setActive("pickThree");
+                  setActiveColor("colorThree");
                 }}
               ></div>
               {/* Color */}
               <div
-                className={`color pickFour ${
-                  active === "pickFour" ? "active" : "notActive"
+                className={`color colorFour ${
+                  activeColor === "colorFour" ? "active" : "notActive"
                 }`}
                 onClick={() => {
-                  setActive("pickFour");
+                  setActiveColor("colorFour");
                 }}
               ></div>
               {/* Color */}
               <div
-                className={`color pickFive ${
-                  active === "pickFive" ? "active" : "notActive"
+                className={`color colorFive ${
+                  activeColor === "colorFive" ? "active" : "notActive"
                 }`}
                 onClick={() => {
-                  setActive("pickFive");
+                  setActiveColor("colorFive");
                 }}
               ></div>
             </div>

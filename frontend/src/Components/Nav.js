@@ -6,25 +6,21 @@ import Logout from "./Logout";
 
 function Nav() {
   return (
-    <header>
-      <div>
-        <nav>
-          {/* <a id="top"></a> */}
-          <a href="#top">
-            <img alt="up arrow" src={upArrow} />
-          </a>
-          <h1 className="title">
-            <Link to="/home">
-              Soft<span>Notes</span>
-            </Link>
-          </h1>
-          <p>
-            <Logout />
-          </p>
-          {/* <p>Sort</p> */}
-        </nav>
-      </div>
-    </header>
+    <nav>
+      {/* <a id="top"></a> */}
+      <a href="#top">
+        <img alt="up arrow" src={upArrow} />
+      </a>
+      <h1 className="title">
+        <Link to="/home">
+          Soft<span>Notes</span>
+        </Link>
+      </h1>
+      <p>
+        <Logout />
+      </p>
+      {/* <p>Sort</p> */}
+    </nav>
   );
 }
 
