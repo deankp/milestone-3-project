@@ -229,6 +229,25 @@ a{
     opacity: 1;
 }
 
+.colorOne{
+    background-color: rgb(255, 252, 232);
+}
+.colorTwo{
+    background-color: rgb(133, 182, 133);
+}
+.colorThree{
+    background-color: rgb(234, 170, 190);
+}
+.colorFour{
+    background-color: rgb(171, 132, 255);
+}
+.colorFive{
+    background-color: rgb(131, 207, 255)
+}
+.colorSix{
+    background-color: rgb(255, 255, 255)
+}
+
 @keyframes rotate {
     0% {
       transform: rotate(0deg)
