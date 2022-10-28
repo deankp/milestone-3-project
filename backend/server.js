@@ -11,12 +11,8 @@ const auth = require('./middleware/auth');
 const app = express();
 app.use(express.json());
 
-const corsOptions ={
-  origin:'http://localhost:3000', 
-  credentials:true,            //access-control-allow-credentials:true
-  optionSuccessStatus:200
-}
-app.use(cors(corsOptions));
+
+app.use(cors());
 
 
 // initialize cookie-parser to allow us access the cookies stored in the browser.

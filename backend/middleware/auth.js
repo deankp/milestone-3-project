@@ -1,18 +1,18 @@
 const jwt = require("jsonwebtoken");
 
 const auth = (req, res, next) => {
-  const token = req.cookies.token;
   try {
-    if (!token) return res.status(400).json({ msg: "Invalid Authorization" });
+    const token = req.header("Authorization");
+    if (!token) return res.status(400).json({ msg: "Invalid Authentication" });
 
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) return res.status(400).json({ msg: "Authorization not valid." });
 
-      req.user = user;
+      req.user = user; // user is payload.
       next();
     });
   } catch (err) {
-    return res.status(500).json({ msg: err.message });
+    return res.status(500).json({ msg: err });
   }
 };
 
