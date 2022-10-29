@@ -2,11 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "../CSS/Home.css";
+import Edit from "../Images/edit.png";
+import Delete from "../Images/delete.png";
+import CreateNote from "./CreateNote";
 
 
-export default function Home() {
+export default function Home(props) {
   const [notes, setNotes] = useState([]);
   const [token, setToken] = useState("");
+  const [createNote, setCreateNote] = useState(false);
 
   const getNotes = async (token) => {
     const res = await axios.get("/api/notes", {
@@ -37,26 +41,51 @@ export default function Home() {
   };
 
   return (
-    <div className="homeWrapper">
-      <div className="homeContainer home">
-      {notes.map((note) => (
-        <div className="note" key={note._id}>
-          <h2 title={note.title}>{note.title}</h2>
-          <div className="text">
-            <p>{note.content}</p>
-          </div>
-          <p className="date">deadline </p>
-          <div className="card-footer">
-            <Link to={`edit/${note._id}`}>
-              
-            </Link>
-          </div>
-          <button className="delete" onClick={() => deleteNote(note._id)}>
-          
-          </button>
+<div className="homeWrapper">
+      <div className={`homeContainer home ${props.colorTheme}`}>
+        {createNote === false && (
+          <a href="#top">
+            <div
+              className="add"
+              onClick={() => {
+                setCreateNote(true);
+              }}
+            >
+              <h2>+</h2>
+            </div>
+          </a>
+        )}
+        {createNote && <CreateNote setCreateNote={setCreateNote} />}
+        <div className="searchBar">
+          <input type="text" placeholder="search..." />
         </div>
-      ))}
-    </div>
+        <div className={`notesContainer`}>
+          {notes.map((note) => (
+            <div className="note" key={note._id}>
+              <div className="delete" onClick={() => deleteNote(note._id)}>
+                <img src={Delete} alt="Delete Button" />
+              </div>
+              <div className="edit">
+                <Link to={`/edit/${note._id}`}>
+                  <img src={Edit} alt="Edit button" />
+                </Link>
+              </div>
+              <p className="date">Date</p>
+              <h2 className="title" title={note.title}>
+                {note.title}
+              </h2>
+              <p className="catagory">Catagory</p>
+              <div className="text">
+                <h3>{note.content}</h3>
+              </div>
+              <div className="card-footer">
+                <Link to={`edit/${note._id}`}></Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <p id="bottom"></p>
     </div>
   );
 }

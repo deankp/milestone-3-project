@@ -1,17 +1,15 @@
-import "../CSS/CreateNote.css";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
-function EditNote(props) {
+export default function EditNote({ match }) {
   const params = useParams();
   const [note, setNote] = useState({
     title: "",
     content: "",
-    // date: "",
+    date: "",
     id: "",
   });
-
   const history = useNavigate();
 
   useEffect(() => {
@@ -43,13 +41,14 @@ function EditNote(props) {
     try {
       const token = localStorage.getItem("tokenStore");
       if (token) {
-        const { title, content, id } = note;
-        const editNote = {
+        const { title, content, date, id } = note;
+        const newNote = {
           title,
           content,
+          date,
         };
 
-        await axios.put(`/api/notes/${id}`, editNote, {
+        await axios.put(`/api/notes/${id}`, newNote, {
           headers: { Authorization: token },
         });
 
@@ -60,88 +59,37 @@ function EditNote(props) {
     }
   };
 
-  const [active, setActive] = useState("pickOne");
-
   return (
-    <div className="createNote">
-      <div className={`createContainer ${active}`}>
-        <p
-          className="exit"
-          onClick={(props) => {
-            props.setCreateNote(false);
-          }}
-        >
-          X
-        </p>
-        <h2>Edit your note</h2>
-        <form onSubmit={editNote}>
+    <div className="create-note">
+      <h2>Edit Note</h2>
+      <form onSubmit={editNote} autoComplete="off">
+        <div className="row">
+          <label htmlFor="title">Title</label>
           <input
             type="text"
-            defaultValue={note.title}
-            placeholder="Enter your title..."
+            value={note.title}
+            id="title"
+            name="title"
             required
             onChange={onChangeInput}
           />
+        </div>
+
+        <div className="row">
+          <label htmlFor="content">Take A Note...</label>
           <textarea
-            defaultValue={note.content}
-            placeholder="Enter note text..."
+            type="text"
+            value={note.content}
+            id="content"
+            name="content"
             required
+            rows="2"
             onChange={onChangeInput}
           />
-          <div className="bottom">
-            <div className="colors">
-              {/* Color */}
-              <div
-                className={`color pickOne ${
-                  active === "pickOne" ? "active" : "notActive"
-                }`}
-                onClick={() => {
-                  setActive("pickOne");
-                }}
-              ></div>
-              {/* Color */}
-              <div
-                className={`color pickTwo ${
-                  active === "pickTwo" ? "active" : "notActive"
-                }`}
-                onClick={() => {
-                  setActive("pickTwo");
-                }}
-              ></div>
-              {/* Color */}
-              <div
-                className={`color pickThree ${
-                  active === "pickThree" ? "active" : "notActive"
-                }`}
-                onClick={() => {
-                  setActive("pickThree");
-                }}
-              ></div>
-              {/* Color */}
-              <div
-                className={`color pickFour ${
-                  active === "pickFour" ? "active" : "notActive"
-                }`}
-                onClick={() => {
-                  setActive("pickFour");
-                }}
-              ></div>
-              {/* Color */}
-              <div
-                className={`color pickFive ${
-                  active === "pickFive" ? "active" : "notActive"
-                }`}
-                onClick={() => {
-                  setActive("pickFive");
-                }}
-              ></div>
-            </div>
-            <input type="submit" value="Edit" />
-          </div>
-        </form>
-      </div>
+        </div>
+
+        <button type="submit">Save</button>
+      </form>
     </div>
   );
 }
-
-export default EditNote;
