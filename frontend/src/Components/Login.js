@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "../CSS/Login.css";
 
 export default function Login({ setIsLogin }) {
   const [user, setUser] = useState({ name: "", email: "", password: "" });
@@ -51,78 +52,65 @@ export default function Login({ setIsLogin }) {
   };
 
   return (
-    <section className="login-page" style={styleForLoginComponent}>
-      <div className="login create-note">
+    <section className="wrapper login" style={styleForLoginComponent}>
+        <h1 className="title">
+          Soft<span>Notes</span>
+        </h1>
+        <div className="container">
+          <div className="col-left">
+            <div className="login-text">
+              <h2>Welcome!</h2>
+              <p>
+                Create your account.
+                <br />
+                For Free!
+              </p>
+              <a href="/signup" className="btn">
+                Sign Up
+              </a>
+            </div>
+          </div>
+          <div className="col-right">
+      <div className="login-form">
         <h2>Login</h2>
         <form onSubmit={loginSubmit}>
+        <p>
+                  <label>
+                    Username/Email address<span>*</span>
+                  </label>
+                  
           <input
             type="email"
             name="email"
             id="login-email"
-            placeholder="Email (masteruser@email.com)"
-            required
-            value={user.email}
-            onChange={onChangeInput}
-          />
-
-          <input
-            type="password"
-            name="password"
-            id="login-password"
-            placeholder="Password (Masteruser975)"
-            required
-            value={user.password}
-            autoComplete="true"
-            onChange={onChangeInput}
-          />
-
-          <button type="submit">Login</button>
-          <p>
-            <span onClick={() => setOnLogin(true)}> Register instead</span>
-          </p>
-          <h3>{err}</h3>
-        </form>
-      </div>
-      <div className="register create-note" style={styleForRegisterComponent}>
-        <h2>Register</h2>
-        <form onSubmit={registerSubmit}>
-          <input
-            type="text"
-            name="name"
-            id="register-name"
-            placeholder="Username"
-            required
-            value={user.name}
-            onChange={onChangeInput}
-          />
-
-          <input
-            type="email"
-            name="email"
-            id="register-email"
             placeholder="Email"
             required
             value={user.email}
             onChange={onChangeInput}
           />
-
+</p>
+<p>
+                  <label>
+                    Password<span>*</span>
+                  </label>
+                  <div id="password">
           <input
             type="password"
             name="password"
-            id="register-password"
+            id="login-password"
             placeholder="Password"
             required
             value={user.password}
             autoComplete="true"
             onChange={onChangeInput}
           />
-
-          <button type="submit">Register</button>
-          <p>
-            <span onClick={() => setOnLogin(false)}> Login instead</span>
-          </p>
+          </div>
+</p>
+          <button type="submit">Login</button>
           <h3>{err}</h3>
         </form>
+      </div>
+      </div>
       </div>
     </section>
   );

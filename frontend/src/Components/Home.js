@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "../CSS/Home.css";
 
 
 export default function Home() {
@@ -36,11 +37,12 @@ export default function Home() {
   };
 
   return (
-    <div className="note-wrapper">
+    <div className="homeWrapper">
+      <div className="homeContainer home">
       {notes.map((note) => (
-        <div className="card" key={note._id}>
-          <h4 title={note.title}>{note.title}</h4>
-          <div className="text-wrapper">
+        <div className="note" key={note._id}>
+          <h2 title={note.title}>{note.title}</h2>
+          <div className="text">
             <p>{note.content}</p>
           </div>
           <p className="date">deadline </p>
@@ -54,6 +56,7 @@ export default function Home() {
           </button>
         </div>
       ))}
+    </div>
     </div>
   );
 }
