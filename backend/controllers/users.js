@@ -6,7 +6,7 @@ const users = {
   registerUser: async (req, res) => {
     try {
       const { username, email, password } = req.body;
-      const user = await Users.findOne({ email: email });
+      const user = await Users.findOne({ email });
       if (user)
         return res.status(400).json({ msg: "This email already exists!" });
 

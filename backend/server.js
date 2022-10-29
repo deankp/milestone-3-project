@@ -5,8 +5,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const userRouter = require("./routes/userRouter");
 const noteRouter = require("./routes/noteRouter");
-const cookieParser = require('cookie-parser');
-const auth = require('./middleware/auth');
+// const cookieParser = require('cookie-parser');
+// const auth = require('./middleware/auth');
 
 const app = express();
 app.use(express.json());
@@ -16,19 +16,19 @@ app.use(cors());
 
 
 // initialize cookie-parser to allow us access the cookies stored in the browser.
-app.use(cookieParser());
+// app.use(cookieParser());
 
 // Routes
 app.use("/user", userRouter);
 app.use("/api/notes", noteRouter);
 
 //logout user
-app.get('/api/logout',auth,function(req,res){
+// app.get('/api/logout',auth,function(req,res){
 
-res.clearCookie()
-req.session.destroy();
-res.sendStatus(200);
-}); 
+// res.clearCookie()
+// req.session.destroy();
+// res.sendStatus(200);
+// }); 
 
 // Listen for Connections
 const PORT = process.env.PORT;
