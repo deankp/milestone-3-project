@@ -1,10 +1,12 @@
 import React from "react";
-import "../CSS/Home.css";
+import "../CSS/Nav.css";
 import { Link } from "react-router-dom";
 import upArrow from "../Images/up-arrow.png";
 import downArrow from "../Images/down-arrow.png";
 import Logout from "./Logout";
 import Github from "../Images/github.PNG";
+
+
 function Nav() {
   return (
     <nav className="nav">

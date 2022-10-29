@@ -7,9 +7,9 @@ function Logout() {
   const logOut = () => {
     localStorage.clear();
     axios
-      .get("http://localhost:3001/user/logout", { withCredentials: true })
+      .get("/user/logout", { withCredentials: true })
       .then(
-        (window.location.href = "/login"),
+        (window.location.href = "/"),
         console.log("I logged Out").catch((error) => {
           console.log(error);
         })

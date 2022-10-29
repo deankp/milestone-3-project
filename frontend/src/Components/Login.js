@@ -12,21 +12,6 @@ export default function Login({ setIsLogin }) {
     setErr("");
   };
 
-  const registerSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await axios.post("/user/register", {
-        username: user.name,
-        email: user.email,
-        password: user.password,
-      });
-      setUser({ name: "", email: "", password: "" });
-      setErr(res.data.msg);
-    } catch (err) {
-      err.response.data.msg && setErr(err.response.data.msg);
-    }
-  };
-
   const loginSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -42,17 +27,8 @@ export default function Login({ setIsLogin }) {
     }
   };
 
-  const [onLogin, setOnLogin] = useState(false);
-  const styleForRegisterComponent = {
-    visibility: onLogin ? "visible" : "hidden",
-  };
-
-  const styleForLoginComponent = {
-    visibility: onLogin ? "hidden" : "visible",
-  };
-
   return (
-    <section className="wrapper login" style={styleForLoginComponent}>
+    <section className="wrapper login">
         <h1 className="title">
           Soft<span>Notes</span>
         </h1>
