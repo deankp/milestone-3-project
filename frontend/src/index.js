@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./CSS/index.css";
 import App from "./App";
 import SignUp from "./Components/SignUp";
+import EditNote from "./Components/EditNote";
 
 // import Notes from "./Components/Notes";
 
@@ -14,6 +15,7 @@ root.render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/signup" element={<SignUp />} />
+      <Route path="/edit/:id" element={<EditNote />} />
     </Routes>
   </BrowserRouter>
 );
