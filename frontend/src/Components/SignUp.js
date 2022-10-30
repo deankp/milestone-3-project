@@ -1,6 +1,7 @@
 import "../CSS/SignUp.css";
 import { useState } from "react";
 import axios from "axios";
+import "../CSS/Animation.css";
 
 function SignUp(props) {
   const [user, setUser] = useState({ username: "", email: "", password: "" });
@@ -29,6 +30,21 @@ function SignUp(props) {
 
   return (
     <div>
+      <div class="area">
+        <ul class="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
       <div className="wrapper login">
         <div className="SignUpWrapper SignUp">
           <div className="SignUpContainer">
@@ -42,7 +58,7 @@ function SignUp(props) {
                     </label>
                   </p>
                   <div>
-                  <input
+                    <input
                       type="text"
                       name="name"
                       id="register-name"
@@ -59,7 +75,7 @@ function SignUp(props) {
                     <label>Email</label>
                   </p>
                   <div>
-                  <input
+                    <input
                       type="email"
                       name="email"
                       id="register-email"
@@ -77,7 +93,7 @@ function SignUp(props) {
                     </label>
                   </p>
                   <div id="password">
-                  <input
+                    <input
                       type="password"
                       name="password"
                       id="register-password"
@@ -96,7 +112,7 @@ function SignUp(props) {
                     </label>
                   </p>
                   <div id="password">
-                  <input
+                    <input
                       type="password"
                       name="password"
                       id="register-password"

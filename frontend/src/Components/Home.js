@@ -6,7 +6,6 @@ import Edit from "../Images/edit.png";
 import Delete from "../Images/delete.png";
 import CreateNote from "./CreateNote";
 
-
 export default function Home(props) {
   const [notes, setNotes] = useState([]);
   const [token, setToken] = useState("");
@@ -41,7 +40,7 @@ export default function Home(props) {
   };
 
   return (
-<div className="homeWrapper">
+    <div className="homeWrapper">
       <div className={`homeContainer home ${props.colorTheme}`}>
         {createNote === false && (
           <a href="#top">
@@ -70,7 +69,7 @@ export default function Home(props) {
                   <img src={Edit} alt="Edit button" />
                 </Link>
               </div>
-              <p className="date">Date</p>
+              <p className="date">{note.updatedAt.slice(0, 10)}</p>
               <h2 className="title" title={note.title}>
                 {note.title}
               </h2>

@@ -19,41 +19,15 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    top:0
+    top:0;
+    cursor: default;
 }
     
 .homeContainer{
     width: 100%;
     max-width: 1200px;
     height: auto;
-    background: rgb(198, 241, 255);
     box-shadow: 0 0 5px #999999;
-}
-
-nav{
-    display: flex;
-    background-color: rgb(210, 210, 210);
-    width: 100%;
-    max-width: 1140px;
-    margin: auto;
-    height:70px;
-    text-align: center;
-    top: 0;
-    position: fixed;
-    border-bottom: 5px solid #383838;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-}
-
-.home nav h1{
-    width: 750px;
-    font-size: xx-large;
-}
-
-.home nav img{
-    width: 40px;
-    margin: 20px
 }
 
 .searchBar{
@@ -80,10 +54,12 @@ nav{
     background-color: aliceblue;
 }
 
-.searchBar input[type="text"]:focus{
+.searchBar input[type="text"]:focus, .searchBar input[type="text"]:hover{
     outline-width: 0;
     border: 2px #D55534 solid;
     background-color: #83B4B3;
+    cursor: auto;
+    color: #FFF0CE
 }
 
 .searchBar input[type="text"]:focus::placeholder{
@@ -139,6 +115,9 @@ nav{
     color: #D55534;
     background-color: rgba(56, 56, 56, .7);
     width: fit-content;
+    cursor: default;
+    padding: 2px;
+    border-radius: 7px;
 }
 
 .note .text{
@@ -229,25 +208,6 @@ a{
     opacity: 1;
 }
 
-.colorOne{
-    background-color: rgb(255, 252, 232);
-}
-.colorTwo{
-    background-color: rgb(133, 182, 133);
-}
-.colorThree{
-    background-color: rgb(234, 170, 190);
-}
-.colorFour{
-    background-color: rgb(171, 132, 255);
-}
-.colorFive{
-    background-color: rgb(131, 207, 255)
-}
-.colorSix{
-    background-color: rgb(255, 255, 255)
-}
-
 @keyframes rotate {
     0% {
       transform: rotate(0deg)
@@ -261,8 +221,7 @@ a{
     100%{
         transform: rotate(360deg)
     }
-
-  }
+}
 
   @media(max-width: 1154px){
     .homeWrapper{
@@ -293,7 +252,7 @@ a{
         left: 92%;
     }
     .home .add{
-        top: 90%;
+        top: 87%;
     }
 }
 
@@ -326,10 +285,20 @@ a{
         left: 94%;
     }
     .home .add{
+        position: fixed;
         margin: 0;
-        left: 85%;
+        left: 50%;
     }
 }
+
+.LightMode{
+    background: rgb(198, 241, 255);
+}
+
+.DarkMode{
+    background: rgb(30, 44, 48);
+}
+
 
 /* DEAN EDITS */
 .note .close{
