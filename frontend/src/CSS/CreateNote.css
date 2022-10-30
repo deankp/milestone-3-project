@@ -147,3 +147,11 @@ margin: 0 10px 0 10px;
 .createNote img{
     width:100%
 }
+
+.edit-note{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

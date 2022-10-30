@@ -77,7 +77,7 @@ export default function Login({ setIsLogin }) {
             <form onSubmit={loginSubmit}>
               <p>
                 <label>
-                  Username/Email address<span>*</span>
+                  Email address<span>*</span>
                 </label>
 
                 <input
