@@ -143,10 +143,10 @@ function SignUp(props) {
                       src={confirmPasswordView ? password_hide : password_show}
                     />
                   </div>
-                  <p className="input">
-                    Have an account?<a href="/">Login Now</a>
-                  </p>
                 </div>
+                <label className="back-to-login">
+                  <a href="/">Have an account? Login Now</a>
+                </label>
                 <div className="submit">
                   <input type="submit" value="Submit" />
                 </div>

@@ -304,6 +304,20 @@ a{
 mark{
     background-color: yellow;
 }
+
+.back-to-login{
+    text-align: center;
+    margin:10px 0 10px 0
+}
+
+.back-to-login a:link, .back-to-login a:visited, .back-to-login a:active, .back-to-login a:link{
+    color: #D55534;
+}
+
+.back-to-login a:hover{
+color: rgb(255, 121, 121);
+}
+
 /* DEAN EDITS */
 .note .close{
     position: absolute;
