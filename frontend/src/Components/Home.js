@@ -18,6 +18,20 @@ export default function Home(props) {
     setNotes(res.data);
   };
 
+  function search() {
+    let textToSearch = document.getElementById("search").value;
+    let paragraph = document.getElementsByClassName("text");
+    textToSearch = textToSearch.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    let pattern = new RegExp(`${textToSearch}`, "gi");
+
+    for (var i = 0; i < paragraph.length; i++) {
+      paragraph[i].innerHTML = paragraph[i].textContent.replace(
+        pattern,
+        (match) => `<mark>${match}</mark>`
+      );
+    }
+  }
+
   useEffect(() => {
     const token = localStorage.getItem("tokenStore");
     setToken(token);
@@ -56,7 +70,12 @@ export default function Home(props) {
         )}
         {createNote && <CreateNote setCreateNote={setCreateNote} />}
         <div className="searchBar">
-          <input type="text" placeholder="search..." />
+          <input
+            id="search"
+            type="text"
+            placeholder="search..."
+            onChange={search}
+          />
         </div>
         <div className={`notesContainer`}>
           {notes.map((note) => (
@@ -74,8 +93,8 @@ export default function Home(props) {
                 {note.title}
               </h2>
               <h4 className="category">{note.category}</h4>
-              <div className="text">
-                <h3>{note.content}</h3>
+              <div>
+                <h3 className="text">{note.content}</h3>
               </div>
               <div className="card-footer">
                 <Link to={`edit/${note._id}`}></Link>
