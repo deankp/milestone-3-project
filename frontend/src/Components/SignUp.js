@@ -1,11 +1,15 @@
 import "../CSS/SignUp.css";
-import { useState } from "react";
+import password_hide from "../Images/password-hide.png";
+import password_show from "../Images/password-show.png";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import "../CSS/Animation.css";
 
 function SignUp(props) {
   const [user, setUser] = useState({ username: "", email: "", password: "" });
   const [err, setErr] = useState("");
+  const [passwordView, setPasswordView] = useState(false);
+  const [confirmPasswordView, setConfirmPasswordView] = useState(false);
 
   const onChangeInput = (e) => {
     const { name, value } = e.target;
@@ -15,6 +19,7 @@ function SignUp(props) {
 
   const registerSubmit = async (e) => {
     e.preventDefault();
+
     try {
       const res = await axios.post("/user/register", {
         username: user.name,
@@ -26,6 +31,13 @@ function SignUp(props) {
     } catch (err) {
       err.response.data.msg && setErr(err.response.data.msg);
     }
+  };
+
+  const changeView = () => {
+    setPasswordView(!passwordView);
+  };
+  const changeConfirmView = () => {
+    setConfirmPasswordView(!confirmPasswordView);
   };
 
   return (
@@ -94,7 +106,7 @@ function SignUp(props) {
                   </p>
                   <div id="password">
                     <input
-                      type="password"
+                      type={passwordView ? "text" : "password"}
                       name="password"
                       id="register-password"
                       placeholder="Password"
@@ -102,6 +114,11 @@ function SignUp(props) {
                       value={user.password}
                       autoComplete="true"
                       onChange={onChangeInput}
+                    />
+                    <img
+                      alt="password show"
+                      onClick={changeView}
+                      src={passwordView ? password_hide : password_show}
                     />
                   </div>
                 </div>
@@ -113,14 +130,17 @@ function SignUp(props) {
                   </p>
                   <div id="password">
                     <input
-                      type="password"
+                      type={confirmPasswordView ? "text" : "password"}
                       name="password"
                       id="register-password"
                       placeholder="Password"
                       required
-                      value={user.password}
                       autoComplete="true"
-                      onChange={onChangeInput}
+                    />
+                    <img
+                      alt="password show"
+                      onClick={changeConfirmView}
+                      src={confirmPasswordView ? password_hide : password_show}
                     />
                   </div>
                   <p className="input">

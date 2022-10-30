@@ -1,11 +1,14 @@
-import React, { useState } from "react";
 import axios from "axios";
 import "../CSS/Login.css";
 import "../CSS/Animation.css";
+import password_hide from "../Images/password-hide.png";
+import password_show from "../Images/password-show.png";
+import { useState, useEffect } from "react";
 
 export default function Login({ setIsLogin }) {
   const [user, setUser] = useState({ name: "", email: "", password: "" });
   const [err, setErr] = useState("");
+  const [passwordView, setPasswordView] = useState(false);
 
   const onChangeInput = (e) => {
     const { name, value } = e.target;
@@ -27,6 +30,12 @@ export default function Login({ setIsLogin }) {
       err.response.data.msg && setErr(err.response.data.msg);
     }
   };
+
+  const changeView = () => {
+    setPasswordView(!passwordView);
+  };
+
+  useEffect(() => {}, [passwordView]);
 
   return (
     <section className="wrapper login">
@@ -87,7 +96,7 @@ export default function Login({ setIsLogin }) {
                 </label>
                 <div id="password">
                   <input
-                    type="password"
+                    type={passwordView ? "text" : "password"}
                     name="password"
                     id="login-password"
                     placeholder="Password"
@@ -95,6 +104,11 @@ export default function Login({ setIsLogin }) {
                     value={user.password}
                     autoComplete="true"
                     onChange={onChangeInput}
+                  />
+                  <img
+                    alt="password show"
+                    onClick={changeView}
+                    src={passwordView ? password_hide : password_show}
                   />
                 </div>
               </p>

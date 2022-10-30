@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import Delete from "../Images/delete.png";
+import "../CSS/CreateNote.css";
 
 export default function EditNote({ match }) {
+  const [activeColor, setActiveColor] = useState("colorOne");
+  const [activeCategory, setActiveCategory] = useState("other");
   const params = useParams();
   const [note, setNote] = useState({
     title: "",
     content: "",
     color: "",
+    category: "",
     id: "",
   });
   const history = useNavigate();
@@ -26,6 +31,8 @@ export default function EditNote({ match }) {
           content: res.data.title,
           id: res.data._id,
         });
+        setActiveColor(`${res.data.color}`);
+        setActiveCategory(`${res.data.category}`);
       }
     };
     getNote();
@@ -41,11 +48,12 @@ export default function EditNote({ match }) {
     try {
       const token = localStorage.getItem("tokenStore");
       if (token) {
-        const { title, content, color, id } = note;
+        const { title, content, color, category, id } = note;
         const newNote = {
           title,
           content,
           color,
+          category,
         };
 
         await axios.put(`/api/notes/${id}`, newNote, {
@@ -59,12 +67,22 @@ export default function EditNote({ match }) {
     }
   };
 
+  useEffect(() => {
+    setNote({
+      ...note,
+      category: `${activeCategory}`,
+      color: `${activeColor}`,
+    });
+    console.log(activeColor);
+    console.log(note);
+  }, [activeColor, activeCategory]);
+
   return (
-    <div className="create-note">
-      <h2>Edit Note</h2>
-      <form onSubmit={editNote} autoComplete="off">
-        <div className="row">
-          <label htmlFor="title">Title</label>
+    <div className="createNote">
+      <div className={`createContainer ${activeColor}`}>
+        <h2>Edit Note</h2>
+        <form onSubmit={editNote} autoComplete="off">
+          <label htmlFor="title">Edit Title</label>
           <input
             type="text"
             value={note.title}
@@ -73,10 +91,71 @@ export default function EditNote({ match }) {
             required
             onChange={onChangeInput}
           />
-        </div>
+          <p>Category</p>
+          <div className="categories">
+            <div
+              className={`category ${
+                activeCategory === "Personal" ? "active" : "notActive"
+              }`}
+              onClick={() => {
+                setActiveCategory("Personal");
+              }}
+            >
+              Personal
+            </div>
+            <div
+              className={`category ${
+                activeCategory === "Work" ? "active" : "notActive"
+              }`}
+              onClick={() => {
+                setActiveCategory("Work");
+              }}
+            >
+              Work
+            </div>
+            <div
+              className={`category ${
+                activeCategory === "Home" ? "active" : "notActive"
+              }`}
+              onClick={() => {
+                setActiveCategory("Home");
+              }}
+            >
+              Home
+            </div>
+            <div
+              className={`category ${
+                activeCategory === "Goal" ? "active" : "notActive"
+              }`}
+              onClick={() => {
+                setActiveCategory("Goal");
+              }}
+            >
+              Goal
+            </div>
+            <div
+              className={`category ${
+                activeCategory === "Reminder" ? "active" : "notActive"
+              }`}
+              onClick={() => {
+                setActiveCategory("Reminder");
+              }}
+            >
+              Reminder
+            </div>
+            <div
+              className={`category ${
+                activeCategory === "Other" ? "active" : "notActive"
+              }`}
+              onClick={() => {
+                setActiveCategory("Other");
+              }}
+            >
+              Other
+            </div>
+          </div>
 
-        <div className="row">
-          <label htmlFor="content">Take A Note...</label>
+          <label htmlFor="content">Edit content</label>
           <textarea
             type="text"
             value={note.content}
@@ -86,10 +165,67 @@ export default function EditNote({ match }) {
             rows="2"
             onChange={onChangeInput}
           />
-        </div>
 
-        <button type="submit">Save</button>
-      </form>
+          <div className="bottom">
+            <div className="colors">
+              {/* Color */}
+              <div
+                className={`color colorOne ${
+                  activeColor === "colorOne" ? "active" : "notActive"
+                }`}
+                onClick={() => {
+                  setActiveColor("colorOne");
+                }}
+              ></div>
+              {/* Color */}
+              <div
+                className={`color colorTwo ${
+                  activeColor === "colorTwo" ? "active" : "notActive"
+                }`}
+                onClick={() => {
+                  setActiveColor("colorTwo");
+                }}
+              ></div>
+              {/* Color */}
+              <div
+                className={`color colorThree ${
+                  activeColor === "colorThree" ? "active" : "notActive"
+                }`}
+                onClick={() => {
+                  setActiveColor("colorThree");
+                }}
+              ></div>
+              {/* Color */}
+              <div
+                className={`color colorFour ${
+                  activeColor === "colorFour" ? "active" : "notActive"
+                }`}
+                onClick={() => {
+                  setActiveColor("colorFour");
+                }}
+              ></div>
+              {/* Color */}
+              <div
+                className={`color colorFive ${
+                  activeColor === "colorFive" ? "active" : "notActive"
+                }`}
+                onClick={() => {
+                  setActiveColor("colorFive");
+                }}
+              ></div>
+              <div
+                className={`color colorSix ${
+                  activeColor === "colorSix" ? "active" : "notActive"
+                }`}
+                onClick={() => {
+                  setActiveColor("colorSix");
+                }}
+              ></div>
+            </div>
+            <input type="submit" value="Save" />
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

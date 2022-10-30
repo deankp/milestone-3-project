@@ -46,8 +46,11 @@ export default function CreateNote(props) {
   };
 
   useEffect(() => {
-    setNote({ ...note, color: `${activeColor}` });
-    setNote({ ...note, category: `${activeCategory}` });
+    setNote({
+      ...note,
+      category: `${activeCategory}`,
+      color: `${activeColor}`,
+    });
   }, [activeColor, activeCategory]);
 
   return (
