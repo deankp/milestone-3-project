@@ -10,9 +10,13 @@ const noteSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    date: {
-      type: Date,
-      default: Date.now,
+    color: {
+      type: String,
+      required: false,
+    },
+    category: {
+      type: String,
+      required: false,
     },
     user_id: {
       type: String,

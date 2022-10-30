@@ -7,7 +7,7 @@ export default function EditNote({ match }) {
   const [note, setNote] = useState({
     title: "",
     content: "",
-    date: "",
+    color: "",
     id: "",
   });
   const history = useNavigate();
@@ -41,11 +41,11 @@ export default function EditNote({ match }) {
     try {
       const token = localStorage.getItem("tokenStore");
       if (token) {
-        const { title, content, date, id } = note;
+        const { title, content, color, id } = note;
         const newNote = {
           title,
           content,
-          date,
+          color,
         };
 
         await axios.put(`/api/notes/${id}`, newNote, {

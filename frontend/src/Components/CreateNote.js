@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Delete from "../Images/delete.png";
@@ -6,12 +6,14 @@ import "../CSS/CreateNote.css";
 
 export default function CreateNote(props) {
   const [activeColor, setActiveColor] = useState("colorOne");
-  const [activeCatagory, setActiveCatagory] = useState("other");
+  const [activeCategory, setActiveCategory] = useState("Other");
   const [note, setNote] = useState({
     title: "",
     content: "",
-    date: "",
+    color: `${activeColor}`,
+    category: `${activeCategory}`,
   });
+
   const history = useNavigate();
 
   const onChangeInput = (e) => {
@@ -24,11 +26,12 @@ export default function CreateNote(props) {
     try {
       const token = localStorage.getItem("tokenStore");
       if (token) {
-        const { title, content, date } = note;
+        const { title, content, color, category } = note;
         const newNote = {
           title,
           content,
-          date,
+          color,
+          category,
         };
 
         await axios.post("/api/notes", newNote, {
@@ -41,6 +44,11 @@ export default function CreateNote(props) {
       window.location.href = "/";
     }
   };
+
+  useEffect(() => {
+    setNote({ ...note, color: `${activeColor}` });
+    setNote({ ...note, category: `${activeCategory}` });
+  }, [activeColor, activeCategory]);
 
   return (
     <div className="createNote">
@@ -55,64 +63,64 @@ export default function CreateNote(props) {
         </p>
         <h2>Create your note</h2>
         <form onSubmit={createNote} autoComplete="off">
-          <p>Catagory</p>
-          <div className="catagories">
+          <p>Category</p>
+          <div className="categories">
             <div
-              className={`catagory ${
-                activeCatagory === "personal" ? "active" : "notActive"
+              className={`category ${
+                activeCategory === "Personal" ? "active" : "notActive"
               }`}
               onClick={() => {
-                setActiveCatagory("personal");
+                setActiveCategory("Personal");
               }}
             >
               Personal
             </div>
             <div
-              className={`catagory ${
-                activeCatagory === "work" ? "active" : "notActive"
+              className={`category ${
+                activeCategory === "Work" ? "active" : "notActive"
               }`}
               onClick={() => {
-                setActiveCatagory("work");
+                setActiveCategory("Work");
               }}
             >
               Work
             </div>
             <div
-              className={`catagory ${
-                activeCatagory === "home" ? "active" : "notActive"
+              className={`category ${
+                activeCategory === "Home" ? "active" : "notActive"
               }`}
               onClick={() => {
-                setActiveCatagory("home");
+                setActiveCategory("Home");
               }}
             >
               Home
             </div>
             <div
-              className={`catagory ${
-                activeCatagory === "goal" ? "active" : "notActive"
+              className={`category ${
+                activeCategory === "Goal" ? "active" : "notActive"
               }`}
               onClick={() => {
-                setActiveCatagory("goal");
+                setActiveCategory("Goal");
               }}
             >
               Goal
             </div>
             <div
-              className={`catagory ${
-                activeCatagory === "reminder" ? "active" : "notActive"
+              className={`category ${
+                activeCategory === "Reminder" ? "active" : "notActive"
               }`}
               onClick={() => {
-                setActiveCatagory("reminder");
+                setActiveCategory("Reminder");
               }}
             >
               Reminder
             </div>
             <div
-              className={`catagory ${
-                activeCatagory === "other" ? "active" : "notActive"
+              className={`category ${
+                activeCategory === "Other" ? "active" : "notActive"
               }`}
               onClick={() => {
-                setActiveCatagory("other");
+                setActiveCategory("Other");
               }}
             >
               Other

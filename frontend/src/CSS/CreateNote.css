@@ -124,19 +124,19 @@ margin: 0 10px 0 10px;
     height:0
 }
 
-.catagories{
+.categories{
     display: flex;
     padding-bottom: 7px;
     border-bottom: 2px solid rgb(98, 98, 98);
 }
 
-.catagory{
+.category{
     margin: 0 10px 0 0px;
     padding:0 3px 0 3px;
     border-radius: 7px;
 }
 
-.catagories .active{
+.categories .active{
     background-color: rgba(58, 58, 58, 0.25);
 }
 

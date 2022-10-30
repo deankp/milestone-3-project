@@ -11,11 +11,12 @@ const notes = {
   },
   createNote: async (req, res) => {
     try {
-      const { title, content, date } = req.body;
+      const { title, content, color, category } = req.body;
       const newNote = new Notes({
         title,
         content,
-        date,
+        color,
+        category,
         user_id: req.user.id,
         name: req.user.name,
       });
@@ -35,13 +36,14 @@ const notes = {
   },
   updateNote: async (req, res) => {
     try {
-      const { title, content, date } = req.body;
+      const { title, content, color, category } = req.body;
       await Notes.findOneAndUpdate(
         { _id: req.params.id },
         {
           title,
           content,
-          date,
+          color,
+          category,
         }
       );
       res.json({ msg: "Note Updated" });

@@ -60,7 +60,7 @@ export default function Home(props) {
         </div>
         <div className={`notesContainer`}>
           {notes.map((note) => (
-            <div className="note" key={note._id}>
+            <div className={`note ${note.color}`} key={note._id}>
               <div className="delete" onClick={() => deleteNote(note._id)}>
                 <img src={Delete} alt="Delete Button" />
               </div>
@@ -73,7 +73,7 @@ export default function Home(props) {
               <h2 className="title" title={note.title}>
                 {note.title}
               </h2>
-              <p className="catagory">Catagory</p>
+              <h4 className="category">{note.category}</h4>
               <div className="text">
                 <h3>{note.content}</h3>
               </div>
