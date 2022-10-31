@@ -2,6 +2,7 @@
   "name": "milestone-3-project",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -13,11 +14,10 @@
     "react-scripts": "5.0.1"
   },
   "scripts": {
-    "start-client": "react-scripts start",
-    "build": "react-scripts build && (cd server && npm install)",
+    "start": "react-scripts start",
+    "build": "react-scripts",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "start": "cd server && npm start"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
