@@ -11,7 +11,6 @@ const noteRouter = require("../backend/routes/noteRouter");
 const app = express();
 app.use(express.json());
 
-
 app.use(cors());
 
 // initialize cookie-parser to allow us access the cookies stored in the browser.
@@ -27,15 +26,22 @@ app.use("/api/notes", noteRouter);
 // res.clearCookie()
 // req.session.destroy();
 // res.sendStatus(200);
-// }); 
-
-// Listen for Connections
-const PORT = process.env.PORT;
-app.listen(PORT, () => {
-  console.log("Listening on Port", PORT);
-});
+// });
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URL, () => {
   console.log("Connected to MongoDB");
+});
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  });
+}
+
+// Listen for Connections
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log("Listening on Port", PORT);
 });
