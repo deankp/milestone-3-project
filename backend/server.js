@@ -1,5 +1,5 @@
 require("dotenv").config();
-const path = require('path');
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -13,15 +13,6 @@ app.use(express.json());
 
 
 app.use(cors());
-
-if (process.env.NODE_ENV === 'production') {
-	app.use(express.static('./build'));
-
-  app.get('*', (request, response) => {
-    response.sendFile(path.join(__dirname, './build', 'index.html'));
-  });
-}
-
 
 // initialize cookie-parser to allow us access the cookies stored in the browser.
 // app.use(cookieParser());
