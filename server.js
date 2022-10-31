@@ -1,10 +1,10 @@
 require("dotenv").config();
-
+const path = require('path');
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const userRouter = require("./routes/userRouter");
-const noteRouter = require("./routes/noteRouter");
+const userRouter = require("../backend/routes/userRouter");
+const noteRouter = require("../backend/routes/noteRouter");
 // const cookieParser = require('cookie-parser');
 // const auth = require('./middleware/auth');
 
@@ -13,6 +13,14 @@ app.use(express.json());
 
 
 app.use(cors());
+
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static('./build'));
+
+  app.get('*', (request, response) => {
+    response.sendFile(path.join(__dirname, './build', 'index.html'));
+  });
+}
 
 
 // initialize cookie-parser to allow us access the cookies stored in the browser.
