@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import Delete from "../Images/delete.png";
 import "../CSS/CreateNote.css";
 import "../CSS/Animation.css";
 
@@ -29,7 +28,7 @@ export default function EditNote({ match }) {
         console.log(res);
         setNote({
           title: res.data.title,
-          content: res.data.title,
+          content: res.data.content,
           id: res.data._id,
         });
         setActiveColor(`${res.data.color}`);
