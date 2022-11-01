@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const userRouter = require("../backend/routes/userRouter");
 const noteRouter = require("../backend/routes/noteRouter");
+const path = require("path");
 // const cookieParser = require('cookie-parser');
 // const auth = require('./middleware/auth');
 
@@ -37,9 +38,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("frontend/build"));
   app.get("*", (req, res) => {
     try {
-      res.sendFile(
-        path.join(`${__dirname}/../frontend/src/Components/Login.js`)
-      );
+      res.sendFile(path.join(`${__dirname}/../frontend/App.js`));
     } catch (e) {
       res.send("Welcome to SoftNotes");
     }
