@@ -6,6 +6,7 @@ const cors = require("cors");
 const userRouter = require("../backend/routes/userRouter");
 const noteRouter = require("../backend/routes/noteRouter");
 const path = require("path");
+const router = require("./routes");
 // const cookieParser = require('cookie-parser');
 // const auth = require('./middleware/auth');
 
@@ -16,6 +17,9 @@ app.use(cors());
 
 // initialize cookie-parser to allow us access the cookies stored in the browser.
 // app.use(cookieParser());
+
+//Controller
+app.get("/", router);
 
 // Routes
 app.use("/user", userRouter);
