@@ -38,7 +38,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("frontend/build"));
   app.get("*", (req, res) => {
     try {
-      res.sendFile(path.join(`${__dirname}/../frontend/App.js`));
+      res.sendFile(path.join(`${__dirname}/../frontend/src/App.js`));
     } catch (e) {
       res.send("Welcome to SoftNotes");
     }
